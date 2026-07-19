@@ -155,7 +155,7 @@ function App() {
     setShowResults(true)
   }
 
-  const resetQuiz = () => {
+  const resetQuiz = (clearProgress = true) => {
     setQuizStarted(false)
     setShowResults(false)
     setCurrentQuestion(0)
@@ -164,7 +164,10 @@ function App() {
     setQuestionStatus([])
     setScore(0)
     setShowExplanation(false)
-    setStartFromQuestion('1')
+    if (clearProgress) {
+      setStartFromQuestion('1')
+      localStorage.removeItem('az900_quiz_progress')
+    }
     setOriginalQuestionStart(1)
   }
 
@@ -248,10 +251,7 @@ function App() {
           </button>
 
           <button
-            onClick={() => {
-              localStorage.removeItem('az900_quiz_progress')
-              setStartFromQuestion('1')
-            }}
+            onClick={() => resetQuiz(true)}
             className="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium py-2 px-6 rounded-lg transition duration-200"
           >
             Reset Progress
@@ -333,10 +333,17 @@ function App() {
           </div>
 
           <button
-            onClick={resetQuiz}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 shadow-lg hover:shadow-xl"
+            onClick={() => resetQuiz(false)}
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 shadow-lg hover:shadow-xl mb-3"
           >
             Try Again
+          </button>
+
+          <button
+            onClick={() => resetQuiz(true)}
+            className="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium py-2 px-6 rounded-lg transition duration-200"
+          >
+            Start New Quiz
           </button>
         </div>
       </div>
@@ -355,6 +362,12 @@ function App() {
               Question {originalQuestionStart + currentQuestion}/{questions.length + originalQuestionStart - 1}
             </span>
             <div className="flex items-center gap-2">
+              <button
+                onClick={() => resetQuiz(false)}
+                className="text-sm text-gray-500 hover:text-gray-700 underline"
+              >
+                Exit Quiz
+              </button>
               <span className="text-sm font-bold text-blue-600">
                 {Math.round(((currentQuestion + 1) / questions.length) * 100)}%
               </span>
