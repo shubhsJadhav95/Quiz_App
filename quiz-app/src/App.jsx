@@ -45,7 +45,7 @@ function App() {
   const [originalQuestionStart, setOriginalQuestionStart] = useState(1)
   const [checkedAnswers, setCheckedAnswers] = useState([])
   const [showExplanation, setShowExplanation] = useState(false)
-  const checkButtonRef = useRef(null)
+  const optionRefs = useRef({})
 
   useEffect(() => {
     // Load saved progress on mount
@@ -114,9 +114,11 @@ function App() {
     
     if (isCorrect) {
       setScore(prev => prev + 1)
-      // Trigger emoji blast on correct answer
-      if (checkButtonRef.current) {
-        emojiBlast(checkButtonRef.current)
+      // Trigger emoji blast from the selected correct answer option
+      const selectedOptionIndex = userAnswers[0]
+      const optionKey = `${currentQuestion}-${selectedOptionIndex}`
+      if (optionRefs.current[optionKey]) {
+        emojiBlast(optionRefs.current[optionKey])
       }
     }
   }
@@ -363,6 +365,7 @@ function App() {
             const isSelected = currentSelected.includes(index)
             const isCorrect = question.correct_answers.includes(option)
             const isChecked = checkedAnswers[currentQuestion]
+            const optionKey = `${currentQuestion}-${index}`
             
             let optionClass = 'border-gray-200 hover:border-blue-300 hover:bg-gray-50 text-gray-700'
             let radioClass = 'border-gray-300'
@@ -386,6 +389,7 @@ function App() {
             return (
               <button
                 key={index}
+                ref={(el) => optionRefs.current[optionKey] = el}
                 onClick={() => !checkedAnswers[currentQuestion] && handleAnswerSelect(index)}
                 disabled={checkedAnswers[currentQuestion]}
                 className={`w-full text-left p-4 rounded-lg border-2 transition-all duration-200 ${optionClass} ${checkedAnswers[currentQuestion] ? 'cursor-not-allowed' : 'cursor-pointer'}`}
@@ -434,7 +438,6 @@ function App() {
           
           {!checkedAnswers[currentQuestion] ? (
             <button
-              ref={checkButtonRef}
               onClick={handleCheckAnswer}
               disabled={currentSelected.length === 0}
               className="px-6 py-3 rounded-lg font-medium transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed bg-blue-600 hover:bg-blue-700 text-white"
