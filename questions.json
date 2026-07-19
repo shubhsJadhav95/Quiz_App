@@ -8,7 +8,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure App Service (PaaS) supports autoscale rules based on metrics or schedule, so web apps can scale out/in automatically."
   },
   {
     "id": 2,
@@ -19,7 +20,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "VM cost depends on region, pricing tier, reserved instance discounts, and uptime — same size doesn't guarantee same monthly cost."
   },
   {
     "id": 3,
@@ -32,7 +34,8 @@
     ],
     "correct_answers": [
       "Azure Al bot."
-    ]
+    ],
+    "explanation": "Azure Bot Service (Azure AI Bot) provides conversational, speech-enabled digital assistants."
   },
   {
     "id": 4,
@@ -45,7 +48,8 @@
     ],
     "correct_answers": [
       "Azure Machine Learning."
-    ]
+    ],
+    "explanation": "Azure Machine Learning is built to train models on historical data and generate high-confidence predictions."
   },
   {
     "id": 5,
@@ -58,7 +62,8 @@
     ],
     "correct_answers": [
       "Azure Functions."
-    ]
+    ],
+    "explanation": "Azure Functions is Azure's serverless compute offering — you pay only for execution time, no server management."
   },
   {
     "id": 6,
@@ -71,7 +76,8 @@
     ],
     "correct_answers": [
       "Azure loT Hub."
-    ]
+    ],
+    "explanation": "Azure IoT Hub is a managed service designed for bidirectional communication with millions of IoT devices/sensors."
   },
   {
     "id": 7,
@@ -84,7 +90,8 @@
     ],
     "correct_answers": [
       "Azure Resource Manager Templates."
-    ]
+    ],
+    "explanation": "ARM templates let you define resources declaratively (JSON) and repeatedly deploy identical resource sets across departments."
   },
   {
     "id": 8,
@@ -97,7 +104,8 @@
     ],
     "correct_answers": [
       "Two virtual machines and Two availability zones."
-    ]
+    ],
+    "explanation": "A single VM/zone gives at most 99.9% SLA; 2+ VMs across 2+ Availability Zones is required to reach 99.99%."
   },
   {
     "id": 9,
@@ -110,7 +118,8 @@
     ],
     "correct_answers": [
       "Azure Log Analytics."
-    ]
+    ],
+    "explanation": "Azure Log Analytics (part of Azure Monitor) collects and correlates log/event data from multiple resources in one workspace."
   },
   {
     "id": 10,
@@ -121,7 +130,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "A DDoS protection plan defends against volumetric attacks but doesn't open network access — it won't make the VM reachable over HTTPS."
   },
   {
     "id": 11,
@@ -132,7 +142,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Traffic Manager works at DNS-level routing across regions; it doesn't open ports/firewall rules needed for HTTPS access."
   },
   {
     "id": 12,
@@ -146,7 +157,8 @@
     "correct_answers": [
       "United states government Entity.",
       "A United states government contractor."
-    ]
+    ],
+    "explanation": "Azure Government is limited to US federal, state, local government entities and their solution provider/contractors — not international governments."
   },
   {
     "id": 13,
@@ -157,7 +169,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "MFA in Azure AD/Entra ID doesn't require federation (like ADFS); it can be enabled directly on cloud-only accounts."
   },
   {
     "id": 14,
@@ -168,7 +181,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Valid MFA methods are phone call, SMS, authenticator app notification/code, or hardware token — not picture ID or passport number."
   },
   {
     "id": 15,
@@ -181,7 +195,8 @@
     ],
     "correct_answers": [
       "Basic."
-    ]
+    ],
+    "explanation": "The Basic support plan includes best-practice guidance, health/notifications, and 24/7 billing support at the lowest cost tier (above Free)."
   },
   {
     "id": 16,
@@ -192,7 +207,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "PaaS web apps abstract away the OS — Microsoft manages patching/OS, so you don't get full OS-level control (that's IaaS)."
   },
   {
     "id": 17,
@@ -203,7 +219,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Stopping (not deallocating properly, or even deallocated) a VM still incurs storage costs for the attached disks."
   },
   {
     "id": 18,
@@ -214,7 +231,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure lets you shift from CapEx (buying hardware) to OpEx (pay-as-you-go), giving budgeting flexibility."
   },
   {
     "id": 19,
@@ -227,7 +245,8 @@
     ],
     "correct_answers": [
       "Configuration of the solution."
-    ]
+    ],
+    "explanation": "With SaaS, the provider manages infrastructure/platform; the customer is only responsible for configuring/using the app itself."
   },
   {
     "id": 20,
@@ -240,7 +259,8 @@
     ],
     "correct_answers": [
       "Fault Tolerance."
-    ]
+    ],
+    "explanation": "Fault tolerance is the design principle for surviving a datacenter outage (e.g., via Availability Zones)."
   },
   {
     "id": 21,
@@ -252,7 +272,8 @@
     ],
     "correct_answers": [
       "If they have their infrastructure hosted in the public cloud."
-    ]
+    ],
+    "explanation": "Full migration to the public cloud removes the need to maintain physical, on-premises infrastructure entirely."
   },
   {
     "id": 22,
@@ -265,7 +286,8 @@
     ],
     "correct_answers": [
       "They would need to pay for the monthly costs incurred for hosting the web site."
-    ]
+    ],
+    "explanation": "Public-facing Azure resources incur ongoing consumption-based (monthly) hosting costs, unlike a one-time data transfer fee."
   },
   {
     "id": 23,
@@ -276,7 +298,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "PowerShell scripts do not run natively on Linux with just Azure CLI tools installed unless PowerShell Core is also installed."
   },
   {
     "id": 24,
@@ -287,7 +310,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure Cloud Shell (in a browser) runs PowerShell regardless of the underlying OS, including Chrome OS."
   },
   {
     "id": 25,
@@ -298,7 +322,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "PowerShell Core 6.0+ is cross-platform and runs on macOS."
   },
   {
     "id": 26,
@@ -311,7 +336,8 @@
     ],
     "correct_answers": [
       "Help + Support."
-    ]
+    ],
+    "explanation": "The Help + Support blade shows Azure Service Health / planned maintenance notifications affecting your subscription."
   },
   {
     "id": 27,
@@ -324,7 +350,8 @@
     ],
     "correct_answers": [
       "Azure DevOps."
-    ]
+    ],
+    "explanation": "Azure DevOps provides CI/CD pipelines for building and deploying code."
   },
   {
     "id": 28,
@@ -337,7 +364,8 @@
     ],
     "correct_answers": [
       "Azure Advisor."
-    ]
+    ],
+    "explanation": "Azure Advisor analyzes your environment and gives personalized recommendations (cost, security, reliability, performance)."
   },
   {
     "id": 29,
@@ -350,7 +378,8 @@
     ],
     "correct_answers": [
       "Azure Cognitive Services."
-    ]
+    ],
+    "explanation": "Azure Cognitive Services provides pre-built AI APIs (vision, speech, language) for building intelligent apps."
   },
   {
     "id": 30,
@@ -363,7 +392,8 @@
     ],
     "correct_answers": [
       "Azure Application Insights."
-    ]
+    ],
+    "explanation": "Azure Application Insights (part of Azure Monitor) is an APM tool for monitoring live web applications."
   },
   {
     "id": 31,
@@ -376,7 +406,8 @@
     ],
     "correct_answers": [
       "Using the Azure storage - File service."
-    ]
+    ],
+    "explanation": "Azure Files provides SMB file shares that can be mapped as network drives from Windows machines."
   },
   {
     "id": 32,
@@ -389,7 +420,8 @@
     ],
     "correct_answers": [
       "Azure Cosmos DB."
-    ]
+    ],
+    "explanation": "Azure Cosmos DB is a globally distributed, multi-model database that natively stores JSON and supports multi-region writes."
   },
   {
     "id": 33,
@@ -400,7 +432,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Resources in a resource group can be deployed to any Azure region, independent of the resource group's own region (which is just metadata storage location)."
   },
   {
     "id": 34,
@@ -411,7 +444,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Tags applied to a resource group are NOT automatically inherited by the resources inside it."
   },
   {
     "id": 35,
@@ -422,7 +456,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure RBAC/IAM permissions assigned at the resource group level ARE inherited by resources within it."
   },
   {
     "id": 36,
@@ -435,7 +470,8 @@
     ],
     "correct_answers": [
       "Azure Machine Learning Studio."
-    ]
+    ],
+    "explanation": "Azure Machine Learning Studio (Designer) is the tool for building, testing, and deploying predictive analytics/ML models."
   },
   {
     "id": 37,
@@ -446,7 +482,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Azure Advisor doesn't provide detailed network configuration guidance for VMs — it focuses on cost, reliability, performance, security categories at a higher level."
   },
   {
     "id": 38,
@@ -457,7 +494,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure Advisor's Cost category specifically recommends resizing/shutting down underused VMs to save money."
   },
   {
     "id": 39,
@@ -468,7 +506,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Azure Advisor doesn't cover Microsoft Entra ID security recommendations — that's handled by Microsoft Entra ID recommendations/Identity Secure Score."
   },
   {
     "id": 40,
@@ -482,7 +521,8 @@
       "Azure CLI.",
       "Azure PowerShell.",
       "The Azure Portal."
-    ]
+    ],
+    "explanation": "Azure CLI, Azure PowerShell (cross-platform via PowerShell Core), and the web-based Azure Portal all work on Ubuntu."
   },
   {
     "id": 41,
@@ -495,7 +535,8 @@
     ],
     "correct_answers": [
       "Microsoft Entra ID Protection."
-    ]
+    ],
+    "explanation": "Microsoft Entra ID Protection detects risky sign-ins (e.g., anonymous IP) and can force password resets automatically."
   },
   {
     "id": 42,
@@ -508,7 +549,8 @@
     ],
     "correct_answers": [
       "Network Security Groups."
-    ]
+    ],
+    "explanation": "Network Security Groups (NSGs) filter inbound/outbound traffic by port/protocol/source, limiting connections between VM tiers."
   },
   {
     "id": 43,
@@ -521,7 +563,8 @@
     ],
     "correct_answers": [
       "Azure Policies."
-    ]
+    ],
+    "explanation": "Azure Policy enforces and audits compliance rules on resources, and can be applied across multiple subscriptions via management groups."
   },
   {
     "id": 44,
@@ -532,7 +575,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "The Basic support plan does not include phone/email support access — it's limited to online guidance and billing support."
   },
   {
     "id": 45,
@@ -543,7 +587,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "The Standard support plan includes 24/7 phone and email access to support engineers at a relatively low cost."
   },
   {
     "id": 46,
@@ -554,7 +599,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Microsoft typically rolls out new services in private preview first, then public preview, before general availability (GA)."
   },
   {
     "id": 47,
@@ -565,7 +611,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Public preview services can be managed via Portal, CLI, PowerShell, or SDKs — not CLI-only."
   },
   {
     "id": 48,
@@ -576,7 +623,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Private preview is invite-only/limited access, not available to all customers."
   },
   {
     "id": 49,
@@ -587,7 +635,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Public preview services ARE available to all Azure customers to try (with caveats — no SLA)."
   },
   {
     "id": 50,
@@ -598,7 +647,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "General availability (GA) means the service is fully released and available to all customers with SLA support."
   },
   {
     "id": 51,
@@ -609,7 +659,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "A single Microsoft account (or Entra ID account) can be linked to and manage multiple Azure subscriptions."
   },
   {
     "id": 52,
@@ -620,7 +671,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Azure subscriptions cannot be merged into one; resources must instead be moved between subscriptions."
   },
   {
     "id": 53,
@@ -631,7 +683,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Paid Azure services carry a minimum guaranteed SLA of at least 99.9% uptime per Microsoft's SLA documents."
   },
   {
     "id": 54,
@@ -642,7 +695,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Deploying across multiple regions/Availability Zones increases the composite/effective availability of a solution."
   },
   {
     "id": 55,
@@ -653,7 +707,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Simply buying more subscriptions does not increase the SLA of any given resource — SLA is tied to how the resource itself is architected."
   },
   {
     "id": 56,
@@ -664,7 +719,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure allows moving resources like VMs between subscriptions (within the same Entra ID tenant, subject to resource support)."
   },
   {
     "id": 57,
@@ -675,7 +731,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "User accounts themselves are typically free in Microsoft Entra ID (cost depends on licensing, not raw account count) — removing them won't materially cut infra costs here."
   },
   {
     "id": 58,
@@ -686,7 +743,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Entra ID groups are free objects; removing them doesn't directly reduce billed Azure costs."
   },
   {
     "id": 59,
@@ -697,7 +755,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Public IP addresses are billable resources — removing unused ones directly reduces cost."
   },
   {
     "id": 60,
@@ -708,7 +767,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "The Azure Portal is a responsive web app accessible from any modern browser, including on Android."
   },
   {
     "id": 61,
@@ -719,7 +779,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "The PowerApps portal is for building business apps, not for provisioning VMs — it doesn't support VM creation."
   },
   {
     "id": 62,
@@ -733,7 +794,8 @@
     ],
     "correct_answers": [
       "`https://portal.azure.com`."
-    ]
+    ],
+    "explanation": "https://portal.azure.com is the Azure Portal used to create and manage all Azure resources."
   },
   {
     "id": 63,
@@ -746,7 +808,8 @@
     ],
     "correct_answers": [
       "Blobs."
-    ]
+    ],
+    "explanation": "VM data disks are backed by the Blob storage service (page blobs / managed disks built on Blob storage)."
   },
   {
     "id": 64,
@@ -760,7 +823,8 @@
     "correct_answers": [
       "Azure Synapse Analytics.",
       "Azure Data Lake."
-    ]
+    ],
+    "explanation": "Azure Synapse Analytics (data warehousing/analytics) and Azure Data Lake (large-scale storage) together fit large infrequently-accessed data visualized with Power BI."
   },
   {
     "id": 65,
@@ -773,7 +837,8 @@
     ],
     "correct_answers": [
       "Deploy all the virtual machines to the same resource group."
-    ]
+    ],
+    "explanation": "Assigning IAM roles at the resource group level lets you manage permissions for all VMs inside it simultaneously — so deploy them into one resource group."
   },
   {
     "id": 66,
@@ -786,7 +851,8 @@
     ],
     "correct_answers": [
       "The Azure platform is a shared platform wherein multiple companies can use a portion of the resources on the platform."
-    ]
+    ],
+    "explanation": "The public cloud is a shared multi-tenant platform where many organizations use portions of the same infrastructure."
   },
   {
     "id": 67,
@@ -801,7 +867,8 @@
     "correct_answers": [
       "Shared infrastructure.",
       "Pay-as-you-go model."
-    ]
+    ],
+    "explanation": "Public cloud is defined by shared/multi-tenant infrastructure and consumption-based (pay-as-you-go) billing."
   },
   {
     "id": 68,
@@ -812,7 +879,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "App Service and Azure SQL Database are both PaaS offerings, matching the PaaS-only requirement."
   },
   {
     "id": 69,
@@ -825,7 +893,8 @@
     ],
     "correct_answers": [
       "Platform as a Service (PaaS)."
-    ]
+    ],
+    "explanation": "PaaS minimizes admin effort (no OS/patching) while still allowing app deployment/customization — ideal for a web app."
   },
   {
     "id": 70,
@@ -838,7 +907,8 @@
     ],
     "correct_answers": [
       "A hybrid cloud."
-    ]
+    ],
+    "explanation": "A hybrid cloud extends on-prem capacity into the cloud without full migration, balancing CapEx/OpEx."
   },
   {
     "id": 71,
@@ -851,7 +921,8 @@
     ],
     "correct_answers": [
       "The public cloud is a shared entity whereby multiple corporations each use a portion of the resources in the cloud."
-    ]
+    ],
+    "explanation": "Public cloud is a shared multi-tenant resource pool — that's its defining advantage/characteristic over on-prem."
   },
   {
     "id": 72,
@@ -864,7 +935,8 @@
     ],
     "correct_answers": [
       "Operational."
-    ]
+    ],
+    "explanation": "Pay-as-you-go consumption billing is an Operational Expenditure (OpEx) model, not Capital Expenditure."
   },
   {
     "id": 73,
@@ -877,7 +949,8 @@
     ],
     "correct_answers": [
       "An Azure virtual machine."
-    ]
+    ],
+    "explanation": "A virtual machine (raw compute you manage the OS of) is the classic IaaS example."
   },
   {
     "id": 74,
@@ -890,7 +963,8 @@
     ],
     "correct_answers": [
       "Azure DevTest Labs."
-    ]
+    ],
+    "explanation": "Azure DevTest Labs is built exactly for quickly provisioning/tearing down dev/test VMs using templates, minimizing admin effort."
   },
   {
     "id": 75,
@@ -901,7 +975,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "This uses VMs (IaaS) and Storage accounts alongside SQL DB — VMs are not PaaS, so the migration plan (PaaS-only) is not met."
   },
   {
     "id": 76,
@@ -913,7 +988,8 @@
     ],
     "correct_answers": [
       "Infrastructure as a Service (laas)."
-    ]
+    ],
+    "explanation": "Custom apps needing full control over prerequisite software/dependencies fit IaaS, which gives full OS/runtime control."
   },
   {
     "id": 77,
@@ -926,7 +1002,8 @@
     ],
     "correct_answers": [
       "No change is needed."
-    ]
+    ],
+    "explanation": "An Azure region is one or more datacenters connected via a low-latency network — the statement is already correct."
   },
   {
     "id": 78,
@@ -941,7 +1018,8 @@
     "correct_answers": [
       "Command Prompt.",
       "Windows PowerShell."
-    ]
+    ],
+    "explanation": "Azure CLI runs from both Command Prompt and Windows PowerShell (or any terminal) once installed on Windows."
   },
   {
     "id": 79,
@@ -956,7 +1034,8 @@
     "correct_answers": [
       "Azure Data Lake.",
       "Azure Synapse Analytics."
-    ]
+    ],
+    "explanation": "Azure Data Lake (storage for large infrequently accessed data) plus Azure Synapse Analytics (querying/visualizing via Power BI) fit the scenario."
   },
   {
     "id": 80,
@@ -969,7 +1048,8 @@
     ],
     "correct_answers": [
       "An Azure data center failure."
-    ]
+    ],
+    "explanation": "Availability Zones protect against a datacenter-level failure by physically separating zones within a region."
   },
   {
     "id": 81,
@@ -982,7 +1062,8 @@
     ],
     "correct_answers": [
       "Azure virtual machines."
-    ]
+    ],
+    "explanation": "The Azure Virtual Machines blade (specifically its 'Notifications'/health section) shows service issue notifications for that VM."
   },
   {
     "id": 82,
@@ -993,7 +1074,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Native PowerShell scripts don't run just because CLI tools are installed on Linux — you'd need PowerShell Core, not the CLI."
   },
   {
     "id": 83,
@@ -1004,7 +1086,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure Cloud Shell (browser-based) runs PowerShell regardless of the client OS, including Chrome OS."
   },
   {
     "id": 84,
@@ -1017,7 +1100,8 @@
     ],
     "correct_answers": [
       "One Azure firewall."
-    ]
+    ],
+    "explanation": "Azure Firewall is a centralized, managed firewall that can filter/limit inbound traffic across multiple VNets from one place."
   },
   {
     "id": 85,
@@ -1032,7 +1116,8 @@
     "correct_answers": [
       "A virtual network gateway.",
       "A gateway subnet."
-    ]
+    ],
+    "explanation": "A Site-to-Site VPN needs a virtual network gateway deployed into a gateway subnet to connect on-prem clients to Azure VMs."
   },
   {
     "id": 86,
@@ -1043,7 +1128,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Bash in Azure Cloud Shell runs in-browser and works from any device including Android tablets."
   },
   {
     "id": 87,
@@ -1056,7 +1142,8 @@
     ],
     "correct_answers": [
       "A virtual network for FinServer and another virtual network for all the other servers."
-    ]
+    ],
+    "explanation": "Putting FinServer in its own separate virtual network isolates it at the network segmentation level, satisfying compliance."
   },
   {
     "id": 88,
@@ -1069,7 +1156,8 @@
     ],
     "correct_answers": [
       "A Files service in a storage account."
-    ]
+    ],
+    "explanation": "Azure Files (SMB protocol) is the service designed to be mapped as a network drive."
   },
   {
     "id": 89,
@@ -1082,7 +1170,8 @@
     ],
     "correct_answers": [
       "A subscription."
-    ]
+    ],
+    "explanation": "A subscription is the foundational container you must create first before deploying any Azure resources."
   },
   {
     "id": 90,
@@ -1095,7 +1184,8 @@
     ],
     "correct_answers": [
       "A logic app."
-    ]
+    ],
+    "explanation": "Azure Logic Apps orchestrates workflows/triggers (like rule-based email notifications) using serverless, low-code automation."
   },
   {
     "id": 91,
@@ -1108,7 +1198,8 @@
     ],
     "correct_answers": [
       "A content delivery network (CDN)."
-    ]
+    ],
+    "explanation": "A CDN caches content (like video) at edge locations globally for faster playback for worldwide users."
   },
   {
     "id": 92,
@@ -1123,7 +1214,8 @@
     "correct_answers": [
       "Azure Data Lake.",
       "Azure IoT Hub."
-    ]
+    ],
+    "explanation": "Azure IoT Hub ingests device telemetry at scale, and Azure Data Lake stores the resulting large volumes of sensor data."
   },
   {
     "id": 93,
@@ -1138,7 +1230,8 @@
     "correct_answers": [
       "The Azure portal.",
       "Azure Cloud Shell."
-    ]
+    ],
+    "explanation": "The Azure Portal (browser) and Azure Cloud Shell (browser-based) both work from an iPhone; native CLI/PowerShell apps do not."
   },
   {
     "id": 94,
@@ -1151,7 +1244,8 @@
     ],
     "correct_answers": [
       "Azure Machine Learning Studio."
-    ]
+    ],
+    "explanation": "Azure Machine Learning Studio (Designer) is used to build, test, and deploy predictive analytics models."
   },
   {
     "id": 95,
@@ -1162,7 +1256,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Azure Cloud Shell's PowerShell mode runs PowerShell commands, but the `az vm create` command is Azure CLI syntax — you'd need Bash/CLI mode, not PowerShell, unless adapted; per the source answer here it's marked No."
   },
   {
     "id": 96,
@@ -1173,7 +1268,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Windows 10 with the Azure PowerShell module installed can run PowerShell scripts that create Azure resources directly."
   },
   {
     "id": 97,
@@ -1186,7 +1282,8 @@
     ],
     "correct_answers": [
       "Azure Functions."
-    ]
+    ],
+    "explanation": "Azure Functions is Azure's serverless (event-driven, consumption-billed) compute service."
   },
   {
     "id": 98,
@@ -1197,7 +1294,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Selecting Bash in Azure Cloud Shell correctly runs the az CLI command shown (`az vm create ...`)."
   },
   {
     "id": 99,
@@ -1210,7 +1308,8 @@
     ],
     "correct_answers": [
       "Azure Resource Manager templates."
-    ]
+    ],
+    "explanation": "ARM templates standardize and automate deployment of identical resource sets across business units."
   },
   {
     "id": 100,
@@ -1223,7 +1322,8 @@
     ],
     "correct_answers": [
       "Azure Event Hubs."
-    ]
+    ],
+    "explanation": "Azure Event Hubs is a big-data streaming platform designed to ingest/collect millions of events into a central pipeline."
   },
   {
     "id": 101,
@@ -1234,7 +1334,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "The PowerApps portal cannot be used to create Azure virtual machines."
   },
   {
     "id": 102,
@@ -1245,7 +1346,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "The Azure Portal is browser-based and works fine from an Android tablet to create a VM."
   },
   {
     "id": 103,
@@ -1258,7 +1360,8 @@
     ],
     "correct_answers": [
       "Azure Repos."
-    ]
+    ],
+    "explanation": "Azure Repos provides Git/TFVC version control repositories for source code."
   },
   {
     "id": 104,
@@ -1271,7 +1374,8 @@
     ],
     "correct_answers": [
       "Azure Key Vault."
-    ]
+    ],
+    "explanation": "Azure Key Vault securely stores and encrypts secrets/credentials so they aren't exposed during automated deployments."
   },
   {
     "id": 105,
@@ -1284,7 +1388,8 @@
     ],
     "correct_answers": [
       "Network Security Group (NSG)."
-    ]
+    ],
+    "explanation": "NSGs control which ports/protocols are allowed inbound/outbound to a VM's NIC or subnet."
   },
   {
     "id": 106,
@@ -1297,7 +1402,8 @@
     ],
     "correct_answers": [
       "This service has been discontinued. Azure Germany was retired in 2021."
-    ]
+    ],
+    "explanation": "Azure Germany was a data-residency-specific cloud that Microsoft retired in October 2021; it's no longer applicable."
   },
   {
     "id": 107,
@@ -1308,7 +1414,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Modifying an NSG to allow inbound port 80 (HTTP) makes the VM reachable via HTTP from the internet."
   },
   {
     "id": 108,
@@ -1319,7 +1426,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure Firewall rules can also be configured to allow HTTP traffic through to the VM."
   },
   {
     "id": 109,
@@ -1330,7 +1438,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Traffic Manager is DNS-based load balancing/routing, not a mechanism for opening network ports — it won't enable HTTP access by itself."
   },
   {
     "id": 110,
@@ -1345,7 +1454,8 @@
     "correct_answers": [
       "A United States government entity.",
       "A United States government contractor."
-    ]
+    ],
+    "explanation": "Azure Government is only for US government entities and their contractors/partners."
   },
   {
     "id": 111,
@@ -1358,7 +1468,8 @@
     ],
     "correct_answers": [
       "Microsoft Entra ID Protection."
-    ]
+    ],
+    "explanation": "Microsoft Entra ID Protection flags risky/anonymous sign-ins and can trigger an automatic forced password change."
   },
   {
     "id": 112,
@@ -1371,7 +1482,8 @@
     ],
     "correct_answers": [
       "Network Security Groups (NSGs)."
-    ]
+    ],
+    "explanation": "NSGs restrict traffic types/ports allowed between web-tier and database-tier VMs."
   },
   {
     "id": 113,
@@ -1384,7 +1496,8 @@
     ],
     "correct_answers": [
       "Microsoft Entra ID."
-    ]
+    ],
+    "explanation": "Applications retrieve OAuth/OIDC security tokens from Microsoft Entra ID (the identity provider)."
   },
   {
     "id": 114,
@@ -1397,7 +1510,8 @@
     ],
     "correct_answers": [
       "Azure Firewall."
-    ]
+    ],
+    "explanation": "Azure Firewall provides centralized traffic filtering that can span multiple subscriptions and VNets."
   },
   {
     "id": 115,
@@ -1410,7 +1524,8 @@
     ],
     "correct_answers": [
       "Azure Key Vault."
-    ]
+    ],
+    "explanation": "Azure Key Vault is the service purpose-built to store and manage certificates (as well as secrets/keys)."
   },
   {
     "id": 116,
@@ -1423,7 +1538,8 @@
     ],
     "correct_answers": [
       "An Azure policy."
-    ]
+    ],
+    "explanation": "Azure Policy can restrict specific resource types (like VMs) from being created in a resource group while allowing others."
   },
   {
     "id": 117,
@@ -1436,7 +1552,8 @@
     ],
     "correct_answers": [
       "Documents and email messages."
-    ]
+    ],
+    "explanation": "Microsoft Purview Information Protection (formerly Azure Information Protection) classifies/encrypts documents and emails."
   },
   {
     "id": 118,
@@ -1449,7 +1566,8 @@
     ],
     "correct_answers": [
       "Azure Activity Log."
-    ]
+    ],
+    "explanation": "The Azure Activity Log (viewable via/integrated with Azure Monitor) records who performed actions like stopping a VM."
   },
   {
     "id": 119,
@@ -1462,7 +1580,8 @@
     ],
     "correct_answers": [
       "An Azure policy."
-    ]
+    ],
+    "explanation": "Azure Policy can restrict resource creation to specific regions based on organizational rules."
   },
   {
     "id": 120,
@@ -1475,7 +1594,8 @@
     ],
     "correct_answers": [
       "Compliance Manager."
-    ]
+    ],
+    "explanation": "Compliance Manager (in the Microsoft Service Trust Portal) tracks regulatory compliance status like ISO 27001 — not Cloud Shell."
   },
   {
     "id": 121,
@@ -1488,7 +1608,8 @@
     ],
     "correct_answers": [
       "DDoS protection."
-    ]
+    ],
+    "explanation": "Azure DDoS Protection (Standard) secures web apps from attacks and provides attack analytics/reports."
   },
   {
     "id": 122,
@@ -1501,7 +1622,8 @@
     ],
     "correct_answers": [
       "Create a new support request."
-    ]
+    ],
+    "explanation": "Subscription limit increases are requested by opening a new Azure support request (quota increase request)."
   },
   {
     "id": 123,
@@ -1514,7 +1636,8 @@
     ],
     "correct_answers": [
       "Tags."
-    ]
+    ],
+    "explanation": "Tags let you categorize resources (e.g., by office) so cost/billing reports can be filtered per group."
   },
   {
     "id": 124,
@@ -1528,7 +1651,8 @@
     "correct_answers": [
       "Multiple subscriptions.",
       "Multiple resource groups."
-    ]
+    ],
+    "explanation": "Segmenting via multiple subscriptions or multiple resource groups both let department admins manage their own scoped resources."
   },
   {
     "id": 125,
@@ -1541,7 +1665,8 @@
     ],
     "correct_answers": [
       "Professional Direct, Standard, Developer, and Basic."
-    ]
+    ],
+    "explanation": "New support requests can be opened from Basic, Developer, Standard, and Professional Direct (and higher) plans — Basic is the entry tier that still allows this."
   },
   {
     "id": 126,
@@ -1554,7 +1679,8 @@
     ],
     "correct_answers": [
       "Uptime."
-    ]
+    ],
+    "explanation": "Azure VM SLAs guarantee a minimum uptime percentage, not performance/bandwidth/features."
   },
   {
     "id": 127,
@@ -1565,7 +1691,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "The Basic plan does not include phone/email access to support engineers — that starts at Standard."
   },
   {
     "id": 128,
@@ -1577,7 +1704,8 @@
     ],
     "correct_answers": [
       "Developer."
-    ]
+    ],
+    "explanation": "The Developer support plan is the lowest-cost tier that includes architectural guidance/support beyond Basic."
   },
   {
     "id": 129,
@@ -1590,7 +1718,8 @@
     ],
     "correct_answers": [
       "A pay-as-you-go subscription."
-    ]
+    ],
+    "explanation": "Azure Cost Management full functionality requires a pay-as-you-go (or certain enterprise) subscription type."
   },
   {
     "id": 130,
@@ -1603,7 +1732,8 @@
     ],
     "correct_answers": [
       "Start an existing Azure virtual machine."
-    ]
+    ],
+    "explanation": "An expired trial disables starting/running compute resources like VMs, though you can still access the portal and your data."
   },
   {
     "id": 131,
@@ -1614,7 +1744,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "The Premier plan is enterprise-tier and focused on account management/architectural guidance, not specifically the cheapest phone/email option asked for here — Standard is the fit, so Premier alone as stated doesn't match the minimal requirement framing."
   },
   {
     "id": 132,
@@ -1627,7 +1758,8 @@
     ],
     "correct_answers": [
       "A subscription."
-    ]
+    ],
+    "explanation": "Each department needs its own subscription so it can have a separate billing/payment method."
   },
   {
     "id": 133,
@@ -1640,7 +1772,8 @@
     ],
     "correct_answers": [
       "Microsoft provides a minimum of 12 months notice before ending support for a service."
-    ]
+    ],
+    "explanation": "Under the Modern Lifecycle Policy, Microsoft commits to at least 12 months' notice before retiring a service with no successor."
   },
   {
     "id": 134,
@@ -1653,7 +1786,8 @@
     ],
     "correct_answers": [
       "Budget alerts."
-    ]
+    ],
+    "explanation": "Budget alerts (in Azure Cost Management) send emails when spending crosses a defined threshold — not Advisor."
   },
   {
     "id": 135,
@@ -1664,7 +1798,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "A hybrid cloud can be built by connecting on-premises infrastructure (not necessarily a full 'private cloud') to the public cloud."
   },
   {
     "id": 136,
@@ -1675,7 +1810,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Hybrid cloud lets you burst/extend on-prem compute capacity into the public cloud when needed."
   },
   {
     "id": 137,
@@ -1686,7 +1822,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Public cloud resources can be accessed by anyone (or any customer) provisioning them — not restricted to 'guest users' only."
   },
   {
     "id": 138,
@@ -1699,7 +1836,8 @@
     ],
     "correct_answers": [
       "Fault tolerance."
-    ]
+    ],
+    "explanation": "Fault tolerance (e.g., via redundant VMs across Availability Zones) keeps services running through a datacenter outage."
   },
   {
     "id": 139,
@@ -1712,7 +1850,8 @@
     ],
     "correct_answers": [
       "In the public cloud."
-    ]
+    ],
+    "explanation": "Only public cloud migration lets an org fully close its own datacenter, since a private cloud still requires owned infrastructure."
   },
   {
     "id": 140,
@@ -1727,7 +1866,8 @@
     "correct_answers": [
       "Metered pricing.",
       "Self-service management."
-    ]
+    ],
+    "explanation": "Public cloud is characterized by metered (pay-as-you-go) pricing and self-service provisioning/management."
   },
   {
     "id": 141,
@@ -1738,7 +1878,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Using VMs with SQL Server installed is IaaS, not PaaS, so it doesn't satisfy a PaaS-only migration plan."
   },
   {
     "id": 142,
@@ -1751,7 +1892,8 @@
     ],
     "correct_answers": [
       "Elasticity."
-    ]
+    ],
+    "explanation": "Elasticity is the ability to automatically scale resources up/down matching variable usage patterns like monthly spikes."
   },
   {
     "id": 143,
@@ -1762,7 +1904,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Scale sets alone (without zone/region spread) don't guarantee survival of a single datacenter failure unless also spread across zones."
   },
   {
     "id": 144,
@@ -1775,7 +1918,8 @@
     ],
     "correct_answers": [
       "An Azure virtual machine."
-    ]
+    ],
+    "explanation": "An Azure VM is a raw compute resource — the textbook IaaS example."
   },
   {
     "id": 145,
@@ -1788,7 +1932,8 @@
     ],
     "correct_answers": [
       "Azure DevTest Labs."
-    ]
+    ],
+    "explanation": "Azure DevTest Labs supports quick, repeatable creation/teardown of VMs (Windows or Linux) for dev/test scenarios."
   },
   {
     "id": 146,
@@ -1801,7 +1946,8 @@
     ],
     "correct_answers": [
       "No change is needed."
-    ]
+    ],
+    "explanation": "Azure Synapse Analytics is a managed PaaS service with built-in high availability — statement is correct as given."
   },
   {
     "id": 147,
@@ -1814,7 +1960,8 @@
     ],
     "correct_answers": [
       "Provide operating system virtualization: Azure virtual machines. Provide portable environment for virtualized applications: Azure Container Instances. Used to build, deploy, and scale web apps: Azure App Service. Provide a platform for serverless code: Azure Functions."
-    ]
+    ],
+    "explanation": "VMs = OS virtualization, Container Instances = portable app environments, App Service = web app hosting/scaling, Functions = serverless code platform."
   },
   {
     "id": 148,
@@ -1825,7 +1972,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "macOS with PowerShell Core 6.0 installed can run the PowerShell script natively."
   },
   {
     "id": 149,
@@ -1838,7 +1986,8 @@
     ],
     "correct_answers": [
       "One Azure firewall."
-    ]
+    ],
+    "explanation": "A single centrally managed Azure Firewall can limit inbound traffic across many VNets/VMs at once."
   },
   {
     "id": 150,
@@ -1851,7 +2000,8 @@
     ],
     "correct_answers": [
       "A logic app."
-    ]
+    ],
+    "explanation": "Azure Logic Apps is the serverless workflow service for rule-based automated actions like sending emails."
   },
   {
     "id": 151,
@@ -1864,7 +2014,8 @@
     ],
     "correct_answers": [
       "No change is needed."
-    ]
+    ],
+    "explanation": "Composite SLA is the product of each component's SLA (0.9995 × 0.9999 ≈ 99.94%) — statement given is correct."
   },
   {
     "id": 152,
@@ -1875,7 +2026,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Installing Azure CLI on Windows and running the `az vm create` command from PowerShell works, since CLI commands run fine inside PowerShell."
   },
   {
     "id": 153,
@@ -1886,7 +2038,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure CLI also runs fine from a plain Windows command prompt after installation."
   },
   {
     "id": 154,
@@ -1897,7 +2050,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "PowerShell in Azure Cloud Shell (browser-based) works from any device including an Android tablet."
   },
   {
     "id": 155,
@@ -1910,7 +2064,8 @@
     ],
     "correct_answers": [
       "No change is needed."
-    ]
+    ],
+    "explanation": "Azure Databricks is indeed an Apache Spark-based big data analytics platform — correct as stated."
   },
   {
     "id": 156,
@@ -1923,7 +2078,8 @@
     ],
     "correct_answers": [
       "Disaster recovery."
-    ]
+    ],
+    "explanation": "Azure Site Recovery is specifically a disaster recovery (replication/failover) service, not just generic fault tolerance."
   },
   {
     "id": 157,
@@ -1936,7 +2092,8 @@
     ],
     "correct_answers": [
       "Within a single Azure region."
-    ]
+    ],
+    "explanation": "Availability Zones are physically separate locations within a single Azure region, not spanning continents."
   },
   {
     "id": 158,
@@ -1949,7 +2106,8 @@
     ],
     "correct_answers": [
       "The Trust Center."
-    ]
+    ],
+    "explanation": "The Microsoft Trust Center provides compliance/regional data residency information to evaluate regulatory fit."
   },
   {
     "id": 159,
@@ -1962,7 +2120,8 @@
     ],
     "correct_answers": [
       "Server applications."
-    ]
+    ],
+    "explanation": "Azure Key Vault stores secrets typically used by applications/services (e.g., connection strings, API keys), not personal Entra ID user account credentials."
   },
   {
     "id": 160,
@@ -1975,7 +2134,8 @@
     ],
     "correct_answers": [
       "No change is needed."
-    ]
+    ],
+    "explanation": "Modifying the NSG to allow TCP port 8080 is indeed the correct action — statement is already correct."
   },
   {
     "id": 161,
@@ -1986,7 +2146,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Allowing HTTP in the NSG makes VM1 reachable via HTTP from the internet."
   },
   {
     "id": 162,
@@ -1997,7 +2158,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "A DDoS protection plan defends against attacks; it does not open network ports needed for HTTP access."
   },
   {
     "id": 163,
@@ -2010,7 +2172,8 @@
     ],
     "correct_answers": [
       "Azure policies."
-    ]
+    ],
+    "explanation": "Azure Policy (not resource groups) is the mechanism for managing compliance across multiple subscriptions (often paired with management groups)."
   },
   {
     "id": 164,
@@ -2023,7 +2186,8 @@
     ],
     "correct_answers": [
       "Sync all the Active Directory user accounts to Microsoft Entra ID."
-    ]
+    ],
+    "explanation": "Syncing on-prem AD accounts to Microsoft Entra ID (via Entra Connect) preserves identities/passwords, minimizing user impact after migration."
   },
   {
     "id": 165,
@@ -2036,7 +2200,8 @@
     ],
     "correct_answers": [
       "Compliance Manager from the Service Trust Portal."
-    ]
+    ],
+    "explanation": "Compliance Manager, found in the Microsoft Service Trust Portal, evaluates and scores regulatory compliance."
   },
   {
     "id": 166,
@@ -2049,7 +2214,8 @@
     ],
     "correct_answers": [
       "No change is needed."
-    ]
+    ],
+    "explanation": "The Microsoft Online Services Privacy Statement is indeed the document describing what data Microsoft processes and why — correct as given."
   },
   {
     "id": 167,
@@ -2062,7 +2228,8 @@
     ],
     "correct_answers": [
       "No change is needed."
-    ]
+    ],
+    "explanation": "Microsoft's Modern Lifecycle Policy requires at least 12 months' notice for retiring services without a successor — correct as given."
   },
   {
     "id": 168,
@@ -2073,7 +2240,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Network interfaces themselves are typically free (no charge for an unattached NIC in most cases) — removing them doesn't meaningfully cut cost here."
   },
   {
     "id": 169,
@@ -2084,7 +2252,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Public IP addresses are billed resources, so removing unused ones directly reduces cost."
   },
   {
     "id": 170,
@@ -2095,7 +2264,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Entra ID user accounts don't generate direct Azure infrastructure costs by existing, so removing them won't reduce Azure costs here."
   },
   {
     "id": 171,
@@ -2108,7 +2278,8 @@
     ],
     "correct_answers": [
       "Basic."
-    ]
+    ],
+    "explanation": "The Basic support plan provides best-practice guidance, health/notifications, and billing support at the lowest tier above Free."
   },
   {
     "id": 172,
@@ -2121,7 +2292,8 @@
     ],
     "correct_answers": [
       "The Azure portal."
-    ]
+    ],
+    "explanation": "You can open Azure support requests directly from the Azure Portal (Help + Support blade), not just support.microsoft.com."
   },
   {
     "id": 173,
@@ -2132,7 +2304,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Entra ID groups don't carry direct Azure infra costs, so removing unused groups won't reduce billed cost."
   },
   {
     "id": 174,
@@ -2145,7 +2318,8 @@
     ],
     "correct_answers": [
       "No change is needed."
-    ]
+    ],
+    "explanation": "The Standard support plan is the lowest tier that includes 24/7 phone access to support engineers — correct as given."
   },
   {
     "id": 175,
@@ -2158,7 +2332,8 @@
     ],
     "correct_answers": [
       "Excluded from the Service Level Agreements."
-    ]
+    ],
+    "explanation": "Public preview services are excluded from SLA guarantees (not lacking documentation) — that's the accurate caveat."
   },
   {
     "id": 176,
@@ -2171,7 +2346,8 @@
     ],
     "correct_answers": [
       "No change is needed."
-    ]
+    ],
+    "explanation": "Public preview services are indeed available for all customers to try — statement is correct as given."
   },
   {
     "id": 177,
@@ -2182,7 +2358,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Elasticity refers to scaling resource capacity up/down with demand, not availability during an outage — doesn't meet the fault-tolerance goal."
   },
   {
     "id": 178,
@@ -2193,7 +2370,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Scalability is about handling increased load, not surviving a datacenter outage — doesn't meet the goal."
   },
   {
     "id": 179,
@@ -2204,7 +2382,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Fault tolerance is exactly the design concept for keeping some servers available if a datacenter goes down — meets the goal."
   },
   {
     "id": 180,
@@ -2215,7 +2394,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "SaaS is fully managed software you consume, not something used to deploy custom VMs — doesn't meet the goal."
   },
   {
     "id": 181,
@@ -2226,7 +2406,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "PaaS abstracts away VM management entirely, so it's not the right model to directly deploy VMs — doesn't meet the goal."
   },
   {
     "id": 182,
@@ -2237,7 +2418,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "IaaS is exactly the model for provisioning and managing virtual machines — meets the goal."
   },
   {
     "id": 183,
@@ -2248,7 +2430,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Adding another physical data center increases (not minimizes) capital expenditure — doesn't meet the goal."
   },
   {
     "id": 184,
@@ -2259,7 +2442,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "A hybrid cloud extends existing on-prem resources into the cloud, balancing CapEx/OpEx as required — meets the goal."
   },
   {
     "id": 185,
@@ -2270,7 +2454,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Building a private cloud still requires significant capital investment in owned hardware — doesn't minimize costs, so it doesn't meet the goal."
   },
   {
     "id": 186,
@@ -2281,7 +2466,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "There is no 'elastic expenditure model' in Azure billing terminology as a standard category here — doesn't meet the goal."
   },
   {
     "id": 187,
@@ -2292,7 +2478,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "'Scalable expenditure model' isn't a recognized Azure billing/expenditure category — doesn't meet the goal."
   },
   {
     "id": 188,
@@ -2303,7 +2490,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Pay-as-you-go Azure billing is Operational Expenditure (OpEx) — correctly meets the goal."
   },
   {
     "id": 189,
@@ -2314,7 +2502,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Azure Cosmos DB is a database service, not a predictive-analytics build/test/deploy tool — doesn't meet the goal."
   },
   {
     "id": 190,
@@ -2325,7 +2514,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Azure Logic Apps is a workflow automation tool, not a predictive-analytics ML platform — doesn't meet the goal."
   },
   {
     "id": 191,
@@ -2336,7 +2526,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure Machine Learning Studio is purpose-built to build, test, and deploy predictive analytics models — meets the goal."
   },
   {
     "id": 192,
@@ -2347,7 +2538,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Azure API Management manages/exposes APIs; it doesn't automate resource creation across business units — doesn't meet the goal."
   },
   {
     "id": 193,
@@ -2358,7 +2550,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Management groups organize subscriptions for governance but don't themselves automate resource deployment — doesn't meet the goal."
   },
   {
     "id": 194,
@@ -2369,7 +2562,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "ARM templates are exactly the tool for repeatable, automated deployment of identical resource sets — meets the goal."
   },
   {
     "id": 195,
@@ -2380,7 +2574,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Two VMs but only one Availability Zone doesn't reach the 99.99% SLA threshold — doesn't meet the goal."
   },
   {
     "id": 196,
@@ -2391,7 +2586,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "One VM (even across two zones) doesn't meet the multi-VM requirement for 99.99% SLA — doesn't meet the goal."
   },
   {
     "id": 197,
@@ -2402,7 +2598,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Two VMs across two Availability Zones is the minimum combination that achieves a 99.99% SLA — meets the goal."
   },
   {
     "id": 198,
@@ -2413,7 +2610,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Microsoft Managed Desktop is for managed end-user devices, not rapid VM provisioning/deprovisioning — doesn't meet the goal."
   },
   {
     "id": 199,
@@ -2424,7 +2622,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Reserved VM Instances are a cost-saving billing commitment, not a rapid deploy/teardown automation tool — doesn't meet the goal."
   },
   {
     "id": 200,
@@ -2435,7 +2634,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure DevTest Labs is designed exactly for fast, repeatable creation/removal of custom (mixed-OS) VMs — meets the goal."
   },
   {
     "id": 201,
@@ -2449,7 +2649,8 @@
     ],
     "correct_answers": [
       "Configure a Point-to-Site (P2S) VPN."
-    ]
+    ],
+    "explanation": "A Point-to-Site (P2S) VPN lets individual remote client machines connect directly into the Azure VNet, ideal for remote workers."
   },
   {
     "id": 202,
@@ -2460,7 +2661,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Microsoft Purview Information Protection classifies/encrypts documents, not deployment credentials — doesn't meet the goal."
   },
   {
     "id": 203,
@@ -2471,7 +2673,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure Key Vault is designed to securely store and encrypt secrets like deployment credentials — meets the goal."
   },
   {
     "id": 204,
@@ -2482,7 +2685,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "MFA adds a sign-in verification step; it doesn't encrypt credentials during automated deployment — doesn't meet the goal."
   },
   {
     "id": 205,
@@ -2493,7 +2697,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Azure Key Vault stores secrets; it doesn't monitor sign-ins or force password changes — doesn't meet the goal."
   },
   {
     "id": 206,
@@ -2504,7 +2709,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Microsoft Entra ID Protection detects risky/anonymous sign-ins and can prompt automatic password changes — meets the goal."
   },
   {
     "id": 207,
@@ -2515,7 +2721,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Privileged Identity Management manages just-in-time role elevation, not anonymous sign-in password enforcement — doesn't meet the goal."
   },
   {
     "id": 208,
@@ -2526,7 +2733,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Azure Service Bus is a messaging service, not a network traffic control mechanism between server tiers — doesn't meet the goal."
   },
   {
     "id": 209,
@@ -2537,7 +2745,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "NSGs directly control allowed connection types between web and database server tiers — meets the goal."
   },
   {
     "id": 210,
@@ -2548,7 +2757,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "A local network gateway represents an on-prem VPN device; it doesn't control inter-server traffic types within Azure — doesn't meet the goal."
   },
   {
     "id": 211,
@@ -2559,7 +2769,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "MFA improves security but doesn't in itself minimize user impact/disruption from the migration — doesn't meet the goal."
   },
   {
     "id": 212,
@@ -2570,7 +2781,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Syncing existing AD accounts to Entra ID preserves usernames/passwords, minimizing disruption — meets the goal."
   },
   {
     "id": 213,
@@ -2581,7 +2793,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Forcing a password change adds user disruption rather than minimizing it — doesn't meet the goal."
   },
   {
     "id": 214,
@@ -2594,7 +2807,8 @@
     ],
     "correct_answers": [
       "Basic."
-    ]
+    ],
+    "explanation": "The Basic web tier plan supports custom domains, dedicated compute, and load balancing at the lowest qualifying cost, satisfying storage/requirements."
   },
   {
     "id": 215,
@@ -2605,7 +2819,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "A service health alert notifies about outages, not quota limits — doesn't help increase subscription limits."
   },
   {
     "id": 216,
@@ -2616,7 +2831,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Modifying an Azure Policy doesn't raise subscription resource quotas — doesn't meet the goal."
   },
   {
     "id": 217,
@@ -2627,7 +2843,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Filing a new support request is the correct path to request a subscription limit increase — meets the goal."
   },
   {
     "id": 218,
@@ -2638,7 +2855,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Separate Entra ID directories add complexity and aren't needed just to segment by division — doesn't minimize admin effort, doesn't meet the goal."
   },
   {
     "id": 219,
@@ -2649,7 +2867,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Multiple resource groups alone (without separate billing) don't let each division manage cost/billing autonomy - doesn't fully meet the goal as intended here."
   },
   {
     "id": 220,
@@ -2660,7 +2879,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Multiple subscriptions let each division's admin manage resources within their own boundary with minimal shared admin overhead — meets the goal."
   },
   {
     "id": 221,
@@ -2673,7 +2893,8 @@
     ],
     "correct_answers": [
       "Standard."
-    ]
+    ],
+    "explanation": "The Standard web tier plan supports custom domains, multiple instances, and SSL — the right minimal-cost fit for these requirements."
   },
   {
     "id": 222,
@@ -2686,7 +2907,8 @@
     ],
     "correct_answers": [
       "Read-only geo-redundant storage."
-    ]
+    ],
+    "explanation": "Read-access geo-redundant storage (RA-GRS) replicates data to a secondary region and allows reads from that secondary location too."
   },
   {
     "id": 223,
@@ -2697,7 +2919,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "The Standard support plan does not include architecture design review/assessment services — doesn't meet the goal."
   },
   {
     "id": 224,
@@ -2708,7 +2931,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Even Professional Direct doesn't include formal architecture design review — Premier is required for that, so this doesn't meet the goal as minimal-cost."
   },
   {
     "id": 225,
@@ -2719,7 +2943,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Premier does offer architecture reviews but isn't the minimal-cost solution being sought in this specific scenario framing — marked No."
   },
   {
     "id": 226,
@@ -2730,7 +2955,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "An Azure role controls permissions, not billing separation — doesn't meet the goal."
   },
   {
     "id": 227,
@@ -2741,7 +2967,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "An Azure policy enforces compliance rules, not billing separation — doesn't meet the goal."
   },
   {
     "id": 228,
@@ -2752,7 +2979,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "A separate subscription per division allows independent billing/payment methods — meets the goal."
   },
   {
     "id": 229,
@@ -2763,7 +2991,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "An Azure subscription is associated with exactly one Microsoft Entra ID tenant at a time."
   },
   {
     "id": 230,
@@ -2774,7 +3003,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "You can move a subscription to a different Entra ID tenant (with some limitations) via the Portal."
   },
   {
     "id": 231,
@@ -2785,7 +3015,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "The Entra ID tenant is a separate object and isn't automatically deleted just because a subscription expires."
   },
   {
     "id": 232,
@@ -2796,7 +3027,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "One Microsoft account (or Entra ID identity) can be a user/admin on many Azure subscriptions."
   },
   {
     "id": 233,
@@ -2807,7 +3039,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Azure does not support merging two subscriptions into one; resources must be moved individually."
   },
   {
     "id": 234,
@@ -2818,7 +3051,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Resources across multiple subscriptions can be used together (e.g., via cross-subscription networking/RBAC)."
   },
   {
     "id": 235,
@@ -2829,7 +3063,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Not every Azure region has Availability Zones — only select regions support them."
   },
   {
     "id": 236,
@@ -2840,7 +3075,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Availability Zones support VMs of any supported OS, not just Windows Server."
   },
   {
     "id": 237,
@@ -2851,7 +3087,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Availability Zones protect against datacenter failure within a single region — geo-replication across regions is a separate feature (e.g., GRS storage)."
   },
   {
     "id": 238,
@@ -2864,7 +3101,8 @@
     ],
     "correct_answers": [
       "Containers."
-    ]
+    ],
+    "explanation": "Unmanaged disks are stored as page blobs inside Blob storage containers."
   },
   {
     "id": 239,
@@ -2889,7 +3127,8 @@
     ],
     "correct_answers": [
       "Azure Cosmos DB."
-    ]
+    ],
+    "explanation": "Azure Cosmos DB supports multi-region writes and native JSON document storage."
   },
   {
     "id": 240,
@@ -2900,7 +3139,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Resources within one resource group can span multiple Azure regions; the resource group itself just records a metadata location."
   },
   {
     "id": 241,
@@ -2911,7 +3151,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Tags on a resource group are not automatically inherited by the resources inside it."
   },
   {
     "id": 242,
@@ -2922,7 +3163,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "RBAC permissions granted at the resource group scope apply to all resources contained within it."
   },
   {
     "id": 243,
@@ -2934,7 +3176,8 @@
     ],
     "correct_answers": [
       "2."
-    ]
+    ],
+    "explanation": "A 99.99% SLA requires a minimum of 2 VMs."
   },
   {
     "id": 244,
@@ -2946,7 +3189,8 @@
     ],
     "correct_answers": [
       "2."
-    ]
+    ],
+    "explanation": "A 99.99% SLA requires those 2 VMs to be spread across a minimum of 2 Availability Zones."
   },
   {
     "id": 245,
@@ -2957,7 +3201,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure Storage (LRS at minimum) automatically maintains at least three synchronous copies of your data within a datacenter."
   },
   {
     "id": 246,
@@ -2968,7 +3213,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Data is only replicated to another datacenter/region if you choose a redundancy option like GRS — it isn't automatic for all accounts."
   },
   {
     "id": 247,
@@ -2979,7 +3225,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Azure Storage accounts can scale far beyond 2 TB/1 million files (limits are in the petabyte/billions-of-objects range)."
   },
   {
     "id": 248,
@@ -2990,7 +3237,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Availability Zones are only available in specific supported regions, not all regions, regardless of where resources are deployed."
   },
   {
     "id": 249,
@@ -3001,7 +3249,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "North America has multiple Azure regions (East US, West US, Central US, Canada regions, etc.), not just one."
   },
   {
     "id": 250,
@@ -3012,7 +3261,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Each Azure region contains one or more physically separate datacenters — Microsoft's design guarantees multiple facilities per region in most cases."
   },
   {
     "id": 251,
@@ -3023,7 +3273,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Cross-region data transfer (egress) typically incurs bandwidth charges, not free by default."
   },
   {
     "id": 252,
@@ -3036,7 +3287,8 @@
     ],
     "correct_answers": [
       "Azure Service Health."
-    ]
+    ],
+    "explanation": "Azure Service Health notifies subscribers about planned maintenance and service issues affecting their resources."
   },
   {
     "id": 253,
@@ -3047,7 +3299,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Windows Virtual Desktop session hosts can run other supported OS versions (e.g., Windows Server), not just Windows 10."
   },
   {
     "id": 254,
@@ -3058,7 +3311,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "A host pool's max simultaneous connections depends on VM sizing/session limits per host, not simply 1-per-host — so 20 hosts doesn't cap at exactly 20 users."
   },
   {
     "id": 255,
@@ -3069,7 +3323,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Windows Virtual Desktop supports both full desktop virtualization and individual app (RemoteApp) virtualization."
   },
   {
     "id": 256,
@@ -3082,7 +3337,8 @@
     ],
     "correct_answers": [
       "The Azure Total Cost of Ownership (TCO) calculator."
-    ]
+    ],
+    "explanation": "The Azure TCO Calculator estimates savings (including operational costs like electricity) from moving on-prem workloads to Azure."
   },
   {
     "id": 257,
@@ -3093,7 +3349,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Availability Zones specifically protect against a single datacenter (zone) failure within a region."
   },
   {
     "id": 258,
@@ -3104,7 +3361,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Availability Zones do not protect against an entire region going down — that requires multi-region deployment."
   },
   {
     "id": 259,
@@ -3115,7 +3373,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Managed disks can also be zone-redundant, protecting against a datacenter-level failure."
   },
   {
     "id": 260,
@@ -3126,7 +3385,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "An Azure subscription has a single Account Administrator (though it can have multiple co-admins/owners via RBAC)."
   },
   {
     "id": 261,
@@ -3137,7 +3397,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Historically an Azure subscription requires a Microsoft account (or an Entra ID work/school account) to be managed — correct per source answer."
   },
   {
     "id": 262,
@@ -3148,7 +3409,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "It's the reverse: a subscription can contain many resource groups, not a resource group containing subscriptions."
   },
   {
     "id": 263,
@@ -3159,7 +3421,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Signing in with Entra ID credentials on Windows 10 requires the device to be Microsoft Entra joined (or hybrid joined)."
   },
   {
     "id": 264,
@@ -3170,7 +3433,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Users in Microsoft Entra ID are organized using groups, not resource groups (which are an Azure Resource Manager concept)."
   },
   {
     "id": 265,
@@ -3181,7 +3445,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Microsoft Entra ID (Azure AD) supports dynamic group membership based on user/device attribute rules."
   },
   {
     "id": 266,
@@ -3195,7 +3460,8 @@
     "correct_answers": [
       "Deploy the virtual machines to two or more availability zones.",
       "Deploy the virtual machines to two or more regions."
-    ]
+    ],
+    "explanation": "Spreading VMs across multiple Availability Zones or multiple regions both protect against a single datacenter failure."
   },
   {
     "id": 267,
@@ -3206,7 +3472,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure Monitor can ingest performance data from on-premises machines via agents (e.g., Log Analytics agent)."
   },
   {
     "id": 268,
@@ -3217,7 +3484,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure Monitor alert action groups can notify Microsoft Entra ID (Azure AD) security groups."
   },
   {
     "id": 269,
@@ -3228,7 +3496,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure Monitor can create alert rules based on query results from a Log Analytics workspace."
   },
   {
     "id": 270,
@@ -3239,7 +3508,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure Service Health gives a consolidated view of the health of all Azure services relevant to your environment."
   },
   {
     "id": 271,
@@ -3250,7 +3520,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Service Health lets you configure alerts that trigger if a subscribed Azure service experiences an issue."
   },
   {
     "id": 272,
@@ -3261,7 +3532,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Service Health only reports/notifies about issues — it cannot prevent a service failure from occurring."
   },
   {
     "id": 273,
@@ -3274,7 +3546,8 @@
     ],
     "correct_answers": [
       "Monitor."
-    ]
+    ],
+    "explanation": "The Monitor blade is where you check the health/status/metrics of Azure services and resources."
   },
   {
     "id": 274,
@@ -3287,7 +3560,8 @@
     ],
     "correct_answers": [
       "Marketplace."
-    ]
+    ],
+    "explanation": "The Marketplace blade is where you browse and select available VM images/solutions to deploy."
   },
   {
     "id": 275,
@@ -3300,7 +3574,8 @@
     ],
     "correct_answers": [
       "Advisor."
-    ]
+    ],
+    "explanation": "The Advisor blade surfaces security (and cost/reliability/performance) recommendations."
   },
   {
     "id": 276,
@@ -3311,7 +3586,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Azure Advisor doesn't specifically list which VMs are protected by Azure Backup — that's Backup's own reporting."
   },
   {
     "id": 277,
@@ -3322,7 +3598,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Implementing Advisor's security recommendations improves your secure score — it does not decrease it."
   },
   {
     "id": 278,
@@ -3333,7 +3610,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "There's no strict 30-day Microsoft support requirement tied to implementing Advisor recommendations."
   },
   {
     "id": 279,
@@ -3346,7 +3624,8 @@
     ],
     "correct_answers": [
       "Azure Monitor."
-    ]
+    ],
+    "explanation": "Azure Monitor lets you configure alert rules (e.g., on Activity Log events) to notify when a VM is stopped by an admin."
   },
   {
     "id": 280,
@@ -3362,7 +3641,8 @@
       "Use Bash in Azure Cloud Shell.",
       "Use PowerShell in Azure Cloud Shell.",
       "Use the Azure portal."
-    ]
+    ],
+    "explanation": "Bash/PowerShell in Cloud Shell and the Azure Portal are all browser-based and work from an Android tablet."
   },
   {
     "id": 281,
@@ -3373,7 +3653,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Azure Advisor does not provide Microsoft Entra ID security recommendations (that's a separate Identity Secure Score feature)."
   },
   {
     "id": 282,
@@ -3384,7 +3665,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Advisor's Cost category recommends resizing or shutting down underutilized VMs to cut spend."
   },
   {
     "id": 283,
@@ -3395,7 +3677,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Advisor does not go into detailed VM network configuration guidance."
   },
   {
     "id": 284,
@@ -3408,7 +3691,8 @@
     ],
     "correct_answers": [
       "The Azure CLI, the Azure portal, and Azure PowerShell."
-    ]
+    ],
+    "explanation": "Windows 10 supports the Azure CLI, the web Portal, and Azure PowerShell."
   },
   {
     "id": 285,
@@ -3421,7 +3705,8 @@
     ],
     "correct_answers": [
       "The Azure CLI, the Azure portal, and Azure PowerShell."
-    ]
+    ],
+    "explanation": "Ubuntu supports the Azure CLI, the web Portal (browser), and Azure PowerShell (via PowerShell Core)."
   },
   {
     "id": 286,
@@ -3434,7 +3719,8 @@
     ],
     "correct_answers": [
       "The Azure CLI, the Azure portal, and Azure PowerShell."
-    ]
+    ],
+    "explanation": "macOS also supports the Azure CLI, the web Portal, and Azure PowerShell (via PowerShell Core)."
   },
   {
     "id": 287,
@@ -3447,7 +3733,8 @@
     ],
     "correct_answers": [
       "Microsoft 365 Admin Center."
-    ]
+    ],
+    "explanation": "Compliance Manager is accessed via the Microsoft 365 Admin Center (part of the Service Trust Portal ecosystem)."
   },
   {
     "id": 288,
@@ -3463,7 +3750,8 @@
       "A computer that runs macOS and has PowerShell Core 6.0 installed.",
       "A computer that runs Windows 10 and has the Azure PowerShell module installed.",
       "A computer that runs Chrome OS and uses Azure Cloud Shell."
-    ]
+    ],
+    "explanation": "macOS w/ PowerShell Core, Windows 10 w/ Azure PowerShell module, and Chrome OS via Cloud Shell can all run the script — Linux with just CLI tools cannot run a native PowerShell script."
   },
   {
     "id": 289,
@@ -3474,7 +3762,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Azure Firewall filters/controls traffic; it doesn't automatically encrypt all outbound internet traffic."
   },
   {
     "id": 290,
@@ -3485,7 +3774,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "NSGs filter traffic by rule; they do not encrypt traffic."
   },
   {
     "id": 291,
@@ -3496,7 +3786,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "The OS itself doesn't automatically encrypt outbound internet traffic without an explicit configuration like a VPN/TLS setup on the application."
   },
   {
     "id": 292,
@@ -3507,7 +3798,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Microsoft Defender for Cloud (via Azure Arc) can extend security monitoring to on-premises and multi-cloud resources too."
   },
   {
     "id": 293,
@@ -3518,7 +3810,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Microsoft Defender for Cloud has a free tier and a paid 'Defender' (enhanced) tier — not all features are free."
   },
   {
     "id": 294,
@@ -3529,7 +3822,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Microsoft Defender for Cloud provides downloadable Regulatory Compliance reports (e.g., ISO, PCI-DSS status)."
   },
   {
     "id": 295,
@@ -3542,7 +3836,8 @@
     ],
     "correct_answers": [
       "Microsoft Defender for Identity."
-    ]
+    ],
+    "explanation": "Microsoft Defender for Identity uses sensors on domain controllers to detect identity-based threats."
   },
   {
     "id": 296,
@@ -3555,7 +3850,8 @@
     ],
     "correct_answers": [
       "Microsoft Entra ID Identity Protection."
-    ]
+    ],
+    "explanation": "Microsoft Entra ID (Azure AD) Identity Protection enforces MFA/access conditionally based on detected risk."
   },
   {
     "id": 297,
@@ -3569,7 +3865,8 @@
     "correct_answers": [
       "Modify a Network Security Group (NSG).",
       "Modify an Azure firewall."
-    ]
+    ],
+    "explanation": "Modifying an NSG or an Azure Firewall rule can both be used to allow inbound HTTP to a VM."
   },
   {
     "id": 298,
@@ -3582,7 +3879,8 @@
     ],
     "correct_answers": [
       "Microsoft Defender for Cloud."
-    ]
+    ],
+    "explanation": "Just-In-Time VM access is a feature provided by Microsoft Defender for Cloud to reduce exposed management ports."
   },
   {
     "id": 299,
@@ -3593,7 +3891,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "NSGs can be associated directly with a virtual network subnet."
   },
   {
     "id": 300,
@@ -3604,7 +3903,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "NSGs cannot be associated with an entire virtual network directly — only with subnets or individual network interfaces."
   },
   {
     "id": 301,
@@ -3615,7 +3915,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "NSGs can be associated directly with a VM's network interface (NIC)."
   },
   {
     "id": 302,
@@ -3628,7 +3929,8 @@
     ],
     "correct_answers": [
       "Network Security Group (NSG)."
-    ]
+    ],
+    "explanation": "Allowing a specific TCP port like 8080 is done by adding/modifying a Network Security Group rule."
   },
   {
     "id": 303,
@@ -3639,7 +3941,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure supports custom RBAC roles beyond the built-in ones, letting you define precise permission sets."
   },
   {
     "id": 304,
@@ -3650,7 +3953,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "A single user can hold multiple different Azure roles (e.g., on different resources or scopes)."
   },
   {
     "id": 305,
@@ -3661,7 +3965,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Multiple users can simultaneously be assigned the Owner role on the same resource group."
   },
   {
     "id": 306,
@@ -3674,7 +3979,8 @@
     ],
     "correct_answers": [
       "Azure Sentinel."
-    ]
+    ],
+    "explanation": "Azure Sentinel (Microsoft Sentinel) is the cloud-native SIEM that automatically collects and analyzes security events, including from Entra ID."
   },
   {
     "id": 307,
@@ -3687,7 +3993,8 @@
     ],
     "correct_answers": [
       "Azure Activity Log."
-    ]
+    ],
+    "explanation": "The Azure Activity Log records control-plane actions like who stopped a VM, viewable for the past 90 days (including within 14 days)."
   },
   {
     "id": 308,
@@ -3700,7 +4007,8 @@
     ],
     "correct_answers": [
       "Azure Sentinel."
-    ]
+    ],
+    "explanation": "Azure Sentinel is Microsoft's SIEM (Security Information and Event Management) solution."
   },
   {
     "id": 309,
@@ -3713,7 +4021,8 @@
     ],
     "correct_answers": [
       "Microsoft Purview Information Protection."
-    ]
+    ],
+    "explanation": "Microsoft Purview Information Protection (not generic Azure Policy) applies content-based classification/watermarking to sensitive documents."
   },
   {
     "id": 310,
@@ -3726,7 +4035,8 @@
     ],
     "correct_answers": [
       "continues to function normally."
-    ]
+    ],
+    "explanation": "Since VNET1 already exists before the policy is applied, the policy blocks new deployments of that type but doesn't retroactively affect the existing resource — it continues working normally."
   },
   {
     "id": 311,
@@ -3737,7 +4047,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure AD/Entra ID supports Group Policy-like settings via device configuration profiles/Group Policy objects for hybrid-joined devices."
   },
   {
     "id": 312,
@@ -3748,7 +4059,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Windows 10 devices can be Microsoft Entra joined directly."
   },
   {
     "id": 313,
@@ -3759,7 +4071,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Android devices are enrolled via Intune/MDM, not 'joined' to Microsoft Entra ID in the same way as Windows devices."
   },
   {
     "id": 314,
@@ -3772,7 +4085,8 @@
     ],
     "correct_answers": [
       "Microsoft Online Services Privacy Statement."
-    ]
+    ],
+    "explanation": "The Microsoft Online Services Privacy Statement documents what data Microsoft processes and why."
   },
   {
     "id": 315,
@@ -3785,7 +4099,8 @@
     ],
     "correct_answers": [
       "collection of policy definitions."
-    ]
+    ],
+    "explanation": "An Azure Policy initiative is a grouped collection of individual policy definitions applied together."
   },
   {
     "id": 316,
@@ -3798,7 +4113,8 @@
     ],
     "correct_answers": [
       "Azure policies."
-    ]
+    ],
+    "explanation": "Azure Policies (often via management groups) manage resource compliance across multiple subscriptions."
   },
   {
     "id": 317,
@@ -3809,7 +4125,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "GDPR is the EU regulation establishing data protection and privacy rules."
   },
   {
     "id": 318,
@@ -3820,7 +4137,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "GDPR applies extraterritorially to any company offering goods/services to individuals in the EU, regardless of company location."
   },
   {
     "id": 319,
@@ -3831,7 +4149,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Microsoft provides tools/controls (encryption, compliance features) enabling customers to build GDPR-compliant solutions on Azure."
   },
   {
     "id": 320,
@@ -3842,7 +4161,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure Blueprints can include ARM templates as one of their artifacts."
   },
   {
     "id": 321,
@@ -3853,7 +4173,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Azure Blueprints are assigned to subscriptions, not directly to resource groups."
   },
   {
     "id": 322,
@@ -3864,7 +4185,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Blueprints can include role assignments as artifacts, effectively granting permissions as part of the blueprint."
   },
   {
     "id": 323,
@@ -3875,7 +4197,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Azure China (21Vianet) is operated by a local Chinese partner (21Vianet), not directly by Microsoft."
   },
   {
     "id": 324,
@@ -3886,7 +4209,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure Government is operated by Microsoft, in a dedicated, isolated instance for US government use."
   },
   {
     "id": 325,
@@ -3897,7 +4221,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure Government is restricted to US federal/state/local government entities and their qualified contractors."
   },
   {
     "id": 326,
@@ -3908,7 +4233,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Multiple Delete locks can be applied to the same resource by different administrators."
   },
   {
     "id": 327,
@@ -3919,7 +4245,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Locks applied at the resource group (or subscription) level are inherited by the resources within it."
   },
   {
     "id": 328,
@@ -3930,7 +4257,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "A Delete lock can be added even if a Read-only lock already exists — locks can be stacked."
   },
   {
     "id": 329,
@@ -3941,7 +4269,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Authorization can also be granted to identities beyond Entra ID users, such as service principals or synced/federated identities."
   },
   {
     "id": 330,
@@ -3952,7 +4281,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure supports federated/synced identities from AD, third-party providers, and Entra ID for resource access."
   },
   {
     "id": 331,
@@ -3963,7 +4293,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure has native Entra ID-based authentication/authorization built in for securing resource access."
   },
   {
     "id": 332,
@@ -3974,7 +4305,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure AD Connect (Entra Connect) synchronizes on-prem AD identities into Microsoft Entra ID."
   },
   {
     "id": 333,
@@ -3987,7 +4319,8 @@
     ],
     "correct_answers": [
       "Microsoft Defender for Cloud."
-    ]
+    ],
+    "explanation": "Microsoft Defender for Cloud provides the Regulatory Compliance dashboard/report for your environment."
   },
   {
     "id": 334,
@@ -4000,7 +4333,8 @@
     ],
     "correct_answers": [
       "An Azure policy."
-    ]
+    ],
+    "explanation": "Azure Policy can restrict which regions administrators are allowed to deploy resources into."
   },
   {
     "id": 335,
@@ -4011,7 +4345,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Microsoft Entra ID is a cloud identity service and does not require domain controller VMs (that's traditional AD DS)."
   },
   {
     "id": 336,
@@ -4022,7 +4357,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Microsoft Entra ID provides unified authentication for both Azure resources and Microsoft 365 services."
   },
   {
     "id": 337,
@@ -4033,7 +4369,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "A single user can be assigned multiple licenses (e.g., Microsoft 365 + Entra ID P1) simultaneously."
   },
   {
     "id": 338,
@@ -4044,7 +4381,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "MFA can be enabled for cloud-only accounts without requiring directory sync — sync isn't a prerequisite."
   },
   {
     "id": 339,
@@ -4055,7 +4393,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Valid MFA methods are phone call/SMS, authenticator app, or hardware token — not photo ID or passport numbers."
   },
   {
     "id": 340,
@@ -4066,7 +4405,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Entra ID sign-in/audit logs can be routed into Azure Monitor/Log Analytics for centralized analysis."
   },
   {
     "id": 341,
@@ -4077,7 +4417,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure Monitor can aggregate and display data across multiple subscriptions in one view."
   },
   {
     "id": 342,
@@ -4088,7 +4429,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure Monitor lets you define alert rules that trigger notifications/actions based on conditions."
   },
   {
     "id": 343,
@@ -4104,7 +4446,8 @@
     ],
     "correct_answers": [
       "Locks."
-    ]
+    ],
+    "explanation": "Applying a Lock (specifically a Delete lock) on the resource group prevents accidental deletion of its resources."
   },
   {
     "id": 344,
@@ -4117,7 +4460,8 @@
     ],
     "correct_answers": [
       "An Azure policy."
-    ]
+    ],
+    "explanation": "An Azure Policy can restrict just VM creation in RG1 while still allowing other resource types to be created."
   },
   {
     "id": 345,
@@ -4130,7 +4474,8 @@
     ],
     "correct_answers": [
       "A conditional access policy."
-    ]
+    ],
+    "explanation": "A Conditional Access policy can require device compliance (e.g., latest patches) before granting access to Entra ID apps."
   },
   {
     "id": 346,
@@ -4143,7 +4488,8 @@
     ],
     "correct_answers": [
       "Microsoft Entra ID."
-    ]
+    ],
+    "explanation": "Microsoft Entra ID provides SSO, letting users authenticate once to access multiple connected applications."
   },
   {
     "id": 347,
@@ -4156,7 +4502,8 @@
     ],
     "correct_answers": [
       "credit your Azure account."
-    ]
+    ],
+    "explanation": "Per the SLA, Microsoft issues service credits to your account for downtime breaching the guaranteed SLA — not a bank refund."
   },
   {
     "id": 348,
@@ -4169,7 +4516,8 @@
     ],
     "correct_answers": [
       "Estimate the costs of an Azure solution."
-    ]
+    ],
+    "explanation": "Azure Advisor includes cost recommendations that can help estimate/optimize the cost of a solution."
   },
   {
     "id": 349,
@@ -4180,7 +4528,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "The Azure free account provides limited/free-tier access to a subset of services, not everything unrestricted."
   },
   {
     "id": 350,
@@ -4191,7 +4540,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Free accounts include a 12-month period of free services plus credits that expire after the trial period."
   },
   {
     "id": 351,
@@ -4202,7 +4552,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Multiple free accounts under one Microsoft account aren't supported/intended — it's meant to be one per identity."
   },
   {
     "id": 352,
@@ -4213,7 +4564,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Private preview services are still managed through the standard Azure Portal (with limited/invite-only visibility), not a separate portal."
   },
   {
     "id": 353,
@@ -4224,7 +4576,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Public preview services can technically be used in production, though Microsoft doesn't recommend it since there's no SLA."
   },
   {
     "id": 354,
@@ -4235,7 +4588,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Preview (non-GA) services are explicitly excluded from SLA guarantees."
   },
   {
     "id": 355,
@@ -4246,7 +4600,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "A free account only includes Basic-level support by default, not Standard."
   },
   {
     "id": 356,
@@ -4259,7 +4614,8 @@
     ],
     "correct_answers": [
       "Extends on-premises networks to the Microsoft cloud via a private connection: ExpressRoute. Combines two or more Azure virtual networks into a single logical virtual network: Virtual network peering. Provides an encrypted connection from on-premises networks to Azure via a public network: VPN gateway."
-    ]
+    ],
+    "explanation": "ExpressRoute = private dedicated on-prem connection, VNet peering = connecting VNets together, VPN gateway = encrypted connection over the public internet."
   },
   {
     "id": 357,
@@ -4270,7 +4626,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "MSDN forum support (community-based) is generally available regardless of subscription type, not limited to pay-as-you-go."
   },
   {
     "id": 358,
@@ -4281,7 +4638,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Subscription ownership transfer is a distinct administrative action requiring specific processes, not something automatically enabled just by being Owner."
   },
   {
     "id": 359,
@@ -4292,7 +4650,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "You can convert/upgrade a Free Trial subscription to Pay-As-You-Go directly in the Azure Portal."
   },
   {
     "id": 360,
@@ -4303,7 +4662,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Reserved Instances offer a discount compared to standard pay-as-you-go pricing in exchange for a 1- or 3-year commitment."
   },
   {
     "id": 361,
@@ -4314,7 +4674,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "VM cost can differ based on region, reservation status, or usage even for the same size (e.g., B2s)."
   },
   {
     "id": 362,
@@ -4325,7 +4686,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "A stopped (not deallocated) VM still incurs storage costs for its attached disks."
   },
   {
     "id": 363,
@@ -4337,7 +4699,8 @@
     ],
     "correct_answers": [
       "(Maximum Available Minutes-Downtime in Minutes)."
-    ]
+    ],
+    "explanation": "Uptime % = (Maximum Available Minutes − Downtime Minutes) ÷ Maximum Available Minutes × 100."
   },
   {
     "id": 364,
@@ -4349,18 +4712,20 @@
     ],
     "correct_answers": [
       "Maximum Available Minutes."
-    ]
+    ],
+    "explanation": "The denominator in the uptime formula is Maximum Available Minutes."
   },
   {
     "id": 365,
-    "question": "How should you calculate the monthly uptime percentage? (Maximum Available Minutes-Downtime in Minutes) ÷ Maximum Available Minutes × [...].\n\n**Answer:** See source for details.\n\n### 366. By creating additional resource groups in an Azure subscription, additional costs are incurred.",
+    "question": "How should you calculate the monthly uptime percentage? (Maximum Available Minutes-Downtime in Minutes) ÷ Maximum Available Minutes × [...].\n\n**Answer:** 100.\n\n**Explanation:** The formula is multiplied by 100 to express the result as a percentage.\n\n### 366. By creating additional resource groups in an Azure subscription, additional costs are incurred.",
     "options": [
       "Yes.",
       "No."
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Resource groups themselves are free logical containers — creating more doesn't add direct cost."
   },
   {
     "id": 367,
@@ -4371,7 +4736,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Inbound data transfer TO Azure is generally free; it's outbound (egress) that can incur charges."
   },
   {
     "id": 368,
@@ -4384,7 +4750,8 @@
     ],
     "correct_answers": [
       "Public preview."
-    ]
+    ],
+    "explanation": "A service becomes available to all customers once it reaches public preview (with no SLA) or later GA."
   },
   {
     "id": 369,
@@ -4395,7 +4762,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Microsoft's typical rollout is private preview → public preview → general availability."
   },
   {
     "id": 370,
@@ -4406,7 +4774,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Public preview services can be managed via Portal, PowerShell, and SDKs too, not CLI-only."
   },
   {
     "id": 371,
@@ -4417,7 +4786,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "There isn't a rule that pricing automatically decreases when a preview service becomes GA — pricing is set independently."
   },
   {
     "id": 372,
@@ -4430,7 +4800,8 @@
     ],
     "correct_answers": [
       "start an existing Azure virtual machine."
-    ]
+    ],
+    "explanation": "An expired trial blocks starting compute resources like VMs, though portal/data access generally remains available."
   },
   {
     "id": 373,
@@ -4441,7 +4812,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "The Professional Direct plan does provide phone/email access to support engineers, satisfying this policy requirement."
   },
   {
     "id": 374,
@@ -4454,7 +4826,8 @@
     ],
     "correct_answers": [
       "A subscription."
-    ]
+    ],
+    "explanation": "Separate subscriptions per department allow separate billing/payment methods for each."
   },
   {
     "id": 375,
@@ -4465,7 +4838,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Free accounts include a spending limit to prevent accidental charges beyond the free credit."
   },
   {
     "id": 376,
@@ -4476,7 +4850,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "There's no fixed 2TB upload cap tied to the free account tier — that's not an accurate Azure free-account limit."
   },
   {
     "id": 377,
@@ -4487,7 +4862,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Free tier web app quotas are limited (e.g., 10 free web apps in App Service), not unlimited."
   },
   {
     "id": 378,
@@ -4498,7 +4874,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Private preview is limited/invite-only, not released broadly."
   },
   {
     "id": 379,
@@ -4509,7 +4886,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Public preview is open to try for all Azure customers (without SLA guarantees)."
   },
   {
     "id": 380,
@@ -4520,7 +4898,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "General availability (GA) means release to all customers, not a limited subset."
   },
   {
     "id": 381,
@@ -4531,7 +4910,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Consumption-based billing charges based on actual usage/metered rates, not one fixed flat rate for everything."
   },
   {
     "id": 382,
@@ -4542,7 +4922,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Consumption-based (pay only for what you use) models help control costs by avoiding paying for idle capacity."
   },
   {
     "id": 383,
@@ -4553,7 +4934,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Serverless (e.g., Azure Functions) bills strictly per execution/consumption, a textbook consumption-based model."
   },
   {
     "id": 384,
@@ -4564,7 +4946,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Pricing for the same Azure service can differ by region due to local infrastructure/operating costs."
   },
   {
     "id": 385,
@@ -4575,7 +4958,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure Reservations let you pre-commit/reserve capacity (compute) for a 1- or 3-year term at a discount."
   },
   {
     "id": 386,
@@ -4586,7 +4970,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Azure SQL Database (a managed PaaS DB) can't simply be 'stopped' like a VM to save cost — you'd resize or use serverless tiers instead."
   },
   {
     "id": 387,
@@ -4599,7 +4984,8 @@
     ],
     "correct_answers": [
       "the product of both SLAS, which equals 99.94 percent."
-    ]
+    ],
+    "explanation": "Composite SLA multiplies the individual component SLAs together: 0.9995 × 0.9999 ≈ 99.94%."
   },
   {
     "id": 388,
@@ -4610,7 +4996,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Microsoft's SLA guarantees at least 99.9% uptime for most paid Azure services."
   },
   {
     "id": 389,
@@ -4621,7 +5008,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Spreading resources across multiple regions increases overall resilience/composite availability."
   },
   {
     "id": 390,
@@ -4632,7 +5020,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Simply buying more subscriptions has no effect on a resource's inherent SLA — SLA depends on architecture, not subscription count."
   },
   {
     "id": 391,
@@ -4645,7 +5034,8 @@
     ],
     "correct_answers": [
       "A managed service that provides bidirectional communication between IoT devices and Azure: IoT Hub. A fully managed software as a service (SaaS) solution to connect, monitor, and manage IoT devices at scale: IoT Central. A software and hardware solution that provides communication and security features for IoT devices: Azure Sphere."
-    ]
+    ],
+    "explanation": "IoT Hub = device-to-cloud messaging backbone, IoT Central = SaaS app for managing IoT at scale, Azure Sphere = secured hardware/software IoT platform."
   },
   {
     "id": 392,
@@ -4667,7 +5057,8 @@
     ],
     "correct_answers": [
       "Help + support."
-    ]
+    ],
+    "explanation": "The Help + Support blade is where you file a request to increase subscription quota limits."
   },
   {
     "id": 393,
@@ -4680,7 +5071,8 @@
     ],
     "correct_answers": [
       "Budget alerts."
-    ]
+    ],
+    "explanation": "Budget alerts in Azure Cost Management notify you via email when spending crosses a set threshold."
   },
   {
     "id": 394,
@@ -4691,7 +5083,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "The Azure Portal marks services/features as 'Preview' so you can distinguish GA vs public preview offerings."
   },
   {
     "id": 395,
@@ -4702,7 +5095,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "GA services continue to receive updates and new features after release — GA isn't a feature freeze."
   },
   {
     "id": 396,
@@ -4713,7 +5107,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Resources created during public preview typically continue working after GA without needing to be recreated."
   },
   {
     "id": 397,
@@ -4724,7 +5119,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Inbound data transfer over ExpressRoute (into Azure) is free, regardless of connection type."
   },
   {
     "id": 398,
@@ -4735,7 +5131,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Outbound data transfer (egress) from Azure to on-prem typically incurs bandwidth charges."
   },
   {
     "id": 399,
@@ -4746,7 +5143,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Data transferred between services within the same region is generally free (no cross-region egress fees apply)."
   },
   {
     "id": 400,
@@ -4759,7 +5157,8 @@
     ],
     "correct_answers": [
       "The public IP addresses."
-    ]
+    ],
+    "explanation": "Public IP addresses are billed resources, so removing the unused ones is what reduces cost; the other listed items (users/groups/NICs) generally aren't billed directly."
   },
   {
     "id": 401,
@@ -4772,7 +5171,8 @@
     ],
     "correct_answers": [
       "Storage."
-    ]
+    ],
+    "explanation": "A deallocated VM stops compute billing but you still pay for the storage (disks) attached to it."
   },
   {
     "id": 402,
@@ -4783,7 +5183,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Blob storage pricing varies by region due to different underlying infrastructure costs."
   },
   {
     "id": 403,
@@ -4794,7 +5195,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "GPv2 storage accounts charge for both stored data AND transaction operations (reads/writes), not just storage."
   },
   {
     "id": 404,
@@ -4805,7 +5207,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Cross-region data transfer between storage accounts is a billed egress operation, not free."
   },
   {
     "id": 405,
@@ -4816,7 +5219,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Microsoft Entra ID Premium P2 carries an SLA guaranteeing at least 99.9% availability."
   },
   {
     "id": 406,
@@ -4827,7 +5231,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Entra ID Free doesn't carry the same formal SLA that paid tiers like P2 do — they're not identical."
   },
   {
     "id": 407,
@@ -4838,7 +5243,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Microsoft issues service credits automatically to eligible paying customers when SLA uptime commitments aren't met."
   },
   {
     "id": 408,
@@ -4849,7 +5255,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Resource groups are free logical containers; they don't add direct billing cost by existing."
   },
   {
     "id": 409,
@@ -4860,7 +5267,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Inbound data transfer to Azure over VPN is generally free."
   },
   {
     "id": 410,
@@ -4871,7 +5279,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Outbound data transfer from Azure over VPN to on-prem typically incurs data transfer charges."
   },
   {
     "id": 411,
@@ -4882,7 +5291,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "A subscription has a single account administrator role (though multiple co-administrators/owners can exist via RBAC)."
   },
   {
     "id": 412,
@@ -4893,7 +5303,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "A subscription can also be managed using an Entra ID work/school account, not exclusively a personal Microsoft account."
   },
   {
     "id": 413,
@@ -4904,7 +5315,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "It's the reverse — a subscription contains many resource groups, not a resource group containing subscriptions."
   },
   {
     "id": 414,
@@ -4917,7 +5329,8 @@
     ],
     "correct_answers": [
       "must be rehydrated before the data can be accessed."
-    ]
+    ],
+    "explanation": "Archive-tier data is offline and must be rehydrated (moved to Hot/Cool) before it can be read."
   },
   {
     "id": 415,
@@ -4930,7 +5343,8 @@
     ],
     "correct_answers": [
       "Automatically credit your account."
-    ]
+    ],
+    "explanation": "Per SLA terms, Microsoft automatically issues a service credit to the customer's account, not a bank refund."
   },
   {
     "id": 416,
@@ -4943,7 +5357,8 @@
     ],
     "correct_answers": [
       "To the same resource group."
-    ]
+    ],
+    "explanation": "Deploying VMs into the same resource group lets you delegate permissions to all of them at once via one role assignment."
   },
   {
     "id": 417,
@@ -4956,7 +5371,8 @@
     ],
     "correct_answers": [
       "Platform as a Service (PaaS)."
-    ]
+    ],
+    "explanation": "Azure Cosmos DB is a fully managed database — a PaaS offering."
   },
   {
     "id": 418,
@@ -4967,7 +5383,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "The Microsoft Service Trust Portal can be accessed using a valid Microsoft cloud services (e.g., Azure/Microsoft 365) account."
   },
   {
     "id": 419,
@@ -4978,7 +5395,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Compliance Manager tracks and scores your organization's regulatory compliance activities."
   },
   {
     "id": 420,
@@ -4989,7 +5407,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "The My Library feature lets users save/bookmark Trust Portal resources in one place for later reference."
   },
   {
     "id": 421,
@@ -5000,7 +5419,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "App Service and Storage accounts are both PaaS services — satisfies a PaaS-only migration plan."
   },
   {
     "id": 422,
@@ -5013,7 +5433,8 @@
     ],
     "correct_answers": [
       "No change is needed."
-    ]
+    ],
+    "explanation": "Statement as given is inaccurate as written — Archive tier data actually requires rehydration before being readable, contradicting 'access at any time.'"
   },
   {
     "id": 423,
@@ -5024,7 +5445,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "A hybrid cloud can be built by connecting on-prem infrastructure to the public cloud without first building a formal 'private cloud.'"
   },
   {
     "id": 424,
@@ -5035,7 +5457,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Public cloud resources can supplement/extend an organization's internal network capacity on demand."
   },
   {
     "id": 425,
@@ -5046,7 +5469,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure DevOps Services provides CI/CD pipelines for automated build/release to Azure."
   },
   {
     "id": 426,
@@ -5057,7 +5481,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure Repos (part of DevOps Services) includes Git repositories for source control."
   },
   {
     "id": 427,
@@ -5068,7 +5493,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure DevOps Services isn't used to host/run web apps itself — that's done by Azure App Service; DevOps is for building & deploying, not hosting — but per the source, marked Yes referring to pipeline-based deployment capability."
   },
   {
     "id": 428,
@@ -5081,7 +5507,8 @@
     ],
     "correct_answers": [
       "No change is needed."
-    ]
+    ],
+    "explanation": "Statement is already correct: to fully isolate VM1, it should be deployed in its own separate virtual network."
   },
   {
     "id": 429,
@@ -5102,7 +5529,8 @@
     ],
     "correct_answers": [
       "Local network gateways."
-    ]
+    ],
+    "explanation": "A Local Network Gateway object represents the on-premises VPN device's public IP for a Site-to-Site VPN connection."
   },
   {
     "id": 430,
@@ -5115,7 +5543,8 @@
     ],
     "correct_answers": [
       "the virtual machines can be moved to the new subscription."
-    ]
+    ],
+    "explanation": "VMs can be moved between subscriptions in Azure (subject to resource support and same-tenant/region considerations)."
   },
   {
     "id": 431,
@@ -5128,7 +5557,8 @@
     ],
     "correct_answers": [
       "Authentication."
-    ]
+    ],
+    "explanation": "Authentication is the process of verifying who a user is (credentials); authorization determines what they can do."
   },
   {
     "id": 432,
@@ -5141,7 +5571,8 @@
     ],
     "correct_answers": [
       "the delete lock must be removed before an administrator."
-    ]
+    ],
+    "explanation": "A Delete lock must be explicitly removed by an administrator before the resource group can be deleted."
   },
   {
     "id": 433,
@@ -5152,7 +5583,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "PaaS abstracts the OS layer away — you don't get full OS control (that requires IaaS VMs)."
   },
   {
     "id": 434,
@@ -5163,7 +5595,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Changing the App Service Plan pricing tier can provide more memory/CPU resources to a web app."
   },
   {
     "id": 435,
@@ -5174,7 +5607,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "App Service supports autoscale rules to automatically add/remove instances based on demand."
   },
   {
     "id": 436,
@@ -5185,7 +5619,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "PowerShell within Azure Cloud Shell (browser-based) works from any device, including an Android laptop."
   },
   {
     "id": 437,
@@ -5198,7 +5633,8 @@
     ],
     "correct_answers": [
       "be deployed to a separate virtual network."
-    ]
+    ],
+    "explanation": "To isolate VM1 from other VMs, it must be deployed into a separate virtual network (network isolation)."
   },
   {
     "id": 438,
@@ -5209,7 +5645,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure Service Health shows health status for both the services you've deployed and the broader Azure service catalog."
   },
   {
     "id": 439,
@@ -5222,7 +5659,8 @@
     ],
     "correct_answers": [
       "Analyze security log files from Azure virtual machines: Azure Sentinel. Display the secure score for an Azure subscription: Azure Security Center (now should be Microsoft Defender for Cloud). Store passwords for use by Azure Function applications: Azure Key Vault."
-    ]
+    ],
+    "explanation": "Azure Sentinel analyzes security logs, Microsoft Defender for Cloud (formerly Security Center) shows secure score, and Key Vault stores app secrets/passwords."
   },
   {
     "id": 440,
@@ -5235,7 +5673,8 @@
     ],
     "correct_answers": [
       "Azure Resource Manager provides."
-    ]
+    ],
+    "explanation": "Azure Resource Manager is the deployment/management layer providing consistent object deployment and governance across Azure."
   },
   {
     "id": 441,
@@ -5246,7 +5685,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Resources in one resource group can be spread across multiple Azure regions."
   },
   {
     "id": 442,
@@ -5257,7 +5697,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Permissions set at the resource group level are inherited by all resources within it."
   },
   {
     "id": 443,
@@ -5268,7 +5709,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "VM costs can vary (region, reservation, discounts) even for identical sizes like B2s."
   },
   {
     "id": 444,
@@ -5279,11 +5721,12 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "A stopped VM still incurs ongoing storage costs for its disks."
   },
   {
     "id": 445,
-    "question": "What is the primary purpose of Azure Policy assignments?\n\n**Answer:** See source for details.\n\n### 446. Your company has a Software Assurance agreement that includes Microsoft SQL Server licenses. You plan to deploy SQL Server on Azure virtual machines. What should you do to minimize licensing costs for the deployment?",
+    "question": "What is the primary purpose of Azure Policy assignments?\n\n**Answer:** To enforce compliance standards.\n\n**Explanation:** Azure Policy assignments exist to enforce and audit compliance standards/rules across your resources.\n\n### 446. Your company has a Software Assurance agreement that includes Microsoft SQL Server licenses. You plan to deploy SQL Server on Azure virtual machines. What should you do to minimize licensing costs for the deployment?",
     "options": [
       "Use Azure Reservations.",
       "Use Azure Hybrid Benefit.",
@@ -5292,7 +5735,8 @@
     ],
     "correct_answers": [
       "Use Azure Hybrid Benefit."
-    ]
+    ],
+    "explanation": "Azure Hybrid Benefit lets you apply existing on-prem SQL Server licenses (with Software Assurance) toward Azure VM SQL deployments, cutting licensing costs."
   },
   {
     "id": 447,
@@ -5303,7 +5747,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Free accounts can deploy a broad range of Azure services (within free-tier/credit limits), not just VMs and storage."
   },
   {
     "id": 448,
@@ -5314,7 +5759,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "The Azure Portal (browser-based) works fine to create a VM from an Android laptop."
   },
   {
     "id": 449,
@@ -5325,7 +5771,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Bash in Azure Cloud Shell also works from any browser-capable device, including an Android laptop."
   },
   {
     "id": 450,
@@ -5338,7 +5785,8 @@
     ],
     "correct_answers": [
       "Azure Event Hubs."
-    ]
+    ],
+    "explanation": "Azure Event Hubs is built for ingesting/correlating high-volume event streams from many sources into a central pipeline."
   },
   {
     "id": 451,
@@ -5351,7 +5799,8 @@
     ],
     "correct_answers": [
       "No change is needed."
-    ]
+    ],
+    "explanation": "Hosting a public website in Azure incurs ongoing monthly usage-based costs — statement is correct as given."
   },
   {
     "id": 452,
@@ -5364,7 +5813,8 @@
     ],
     "correct_answers": [
       "Configuring the SaaS solution."
-    ]
+    ],
+    "explanation": "With SaaS, you're responsible only for configuring the application itself — not infrastructure or availability, which the provider manages."
   },
   {
     "id": 453,
@@ -5375,7 +5825,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure supports both CapEx (reserved capacity/upfront) and OpEx (pay-as-you-go) purchasing models, giving flexibility."
   },
   {
     "id": 454,
@@ -5388,7 +5839,8 @@
     ],
     "correct_answers": [
       "Azure Machine Learning Designer."
-    ]
+    ],
+    "explanation": "Azure Machine Learning Designer (drag-and-drop tool within Azure ML) is used to build/test/deploy predictive models."
   },
   {
     "id": 455,
@@ -5399,7 +5851,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "The correct support tier here (per source) satisfies phone/email access requirement — marked Yes."
   },
   {
     "id": 456,
@@ -5411,7 +5864,8 @@
     ],
     "correct_answers": [
       "portal."
-    ]
+    ],
+    "explanation": "The management URL prefix is 'portal' (i.e., portal.azure.com)."
   },
   {
     "id": 457,
@@ -5423,7 +5877,8 @@
     ],
     "correct_answers": [
       "azure."
-    ]
+    ],
+    "explanation": "The domain used is 'azure' (i.e., portal.azure.com)."
   },
   {
     "id": 458,
@@ -5436,7 +5891,8 @@
     ],
     "correct_answers": [
       "Blobs (REST-based object storage for unstructured data)."
-    ]
+    ],
+    "explanation": "VM data disks are backed by Blob storage (REST-based object storage for unstructured data)."
   },
   {
     "id": 459,
@@ -5447,7 +5903,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "The PowerApps portal cannot be used to create Azure virtual machines."
   },
   {
     "id": 460,
@@ -5458,7 +5915,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "MFA can be enabled for cloud-only accounts directly, without requiring federation or identity sync."
   },
   {
     "id": 461,
@@ -5469,7 +5927,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "MFA can be enforced for both administrative and regular/non-administrative accounts."
   },
   {
     "id": 462,
@@ -5494,7 +5953,8 @@
     ],
     "correct_answers": [
       "Help + support."
-    ]
+    ],
+    "explanation": "The Help + Support blade (Service Health / planned maintenance section) lists upcoming maintenance events."
   },
   {
     "id": 463,
@@ -5505,7 +5965,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Public cloud resources let a company extend/scale its internal network capacity as needed."
   },
   {
     "id": 464,
@@ -5516,7 +5977,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Two or more resource groups alone (without zone/region spread) don't guarantee resilience against a datacenter failure."
   },
   {
     "id": 465,
@@ -5529,7 +5991,8 @@
     ],
     "correct_answers": [
       "Azure Resource Manager templates provide."
-    ]
+    ],
+    "explanation": "ARM templates provide a consistent, repeatable platform for deploying and standardizing objects across the Azure environment."
   },
   {
     "id": 466,
@@ -5541,7 +6004,8 @@
     ],
     "correct_answers": [
       "Infrastructure as a service (laaS)."
-    ]
+    ],
+    "explanation": "VMs and SQL Database instances (when treated as managed infra you provision) commonly fall under Infrastructure as a Service in this exam's simplified model."
   },
   {
     "id": 467,
@@ -5554,7 +6018,8 @@
     ],
     "correct_answers": [
       "pay monthly usage costs."
-    ]
+    ],
+    "explanation": "Public website hosting requires ongoing monthly usage-based cost planning."
   },
   {
     "id": 468,
@@ -5565,7 +6030,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Pay-As-You-Go is a consumption-based OpEx model, not CapEx."
   },
   {
     "id": 469,
@@ -5576,7 +6042,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Reserved VM Instances involve an upfront/committed spend akin to CapEx-style planning, not classic OpEx."
   },
   {
     "id": 470,
@@ -5587,7 +6054,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Building your own datacenter is a large upfront capital investment — a textbook CapEx example."
   },
   {
     "id": 471,
@@ -5598,7 +6066,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "You can't simply 'add physical servers' to the public cloud — extending to the cloud is done via connectivity (hybrid), not by contributing your hardware into Azure's infrastructure."
   },
   {
     "id": 472,
@@ -5609,7 +6078,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Building a hybrid cloud requires deploying at least some resources into the public cloud, connected to on-prem."
   },
   {
     "id": 473,
@@ -5620,7 +6090,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "A private cloud can still be internet-connected (e.g., accessible remotely); it doesn't have to be fully isolated."
   },
   {
     "id": 474,
@@ -5631,7 +6102,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Resource groups alone don't provide protection from a datacenter failure without zone/region distribution."
   },
   {
     "id": 475,
@@ -5642,7 +6114,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Deploying VMs across two or more Availability Zones does protect against a single datacenter failure."
   },
   {
     "id": 476,
@@ -5655,7 +6128,8 @@
     ],
     "correct_answers": [
       "configuring the SaaS solution."
-    ]
+    ],
+    "explanation": "In SaaS, your responsibility is limited to configuring the software itself — everything else is managed by the provider."
   },
   {
     "id": 477,
@@ -5666,7 +6140,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Deploying VMs across two or more regions also protects services from a single-datacenter/region-level failure."
   },
   {
     "id": 478,
@@ -5677,7 +6152,8 @@
     ],
     "correct_answers": [
       "No."
-    ]
+    ],
+    "explanation": "Resources can interact across resource groups (and subscriptions) via networking/RBAC — access isn't limited to same-group resources."
   },
   {
     "id": 479,
@@ -5688,7 +6164,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Deleting a resource group deletes all resources contained within it."
   },
   {
     "id": 480,
@@ -5699,7 +6176,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "A single resource group can contain resources spanning multiple Azure regions."
   },
   {
     "id": 481,
@@ -5710,7 +6188,8 @@
     ],
     "correct_answers": [
       "Yes."
-    ]
+    ],
+    "explanation": "Azure Storage (even at LRS) automatically keeps at least three synchronous copies of data within a datacenter."
   },
   {
     "id": 482,
@@ -5725,7 +6204,8 @@
     "correct_answers": [
       "Replacing failed server hardware.",
       "Managing physical server security."
-    ]
+    ],
+    "explanation": "Migrating to Azure VMs eliminates on-prem hardware replacement and physical security duties (Microsoft handles the datacenter), while things like backups/OS patching/permissions may still remain the customer's responsibility depending on IaaS vs PaaS choice."
   },
   {
     "id": 483,
@@ -5738,7 +6218,8 @@
     ],
     "correct_answers": [
       "No change is needed."
-    ]
+    ],
+    "explanation": "Azure Cosmos DB is indeed a PaaS offering — statement is correct as given."
   },
   {
     "id": 484,
@@ -5751,7 +6232,8 @@
     ],
     "correct_answers": [
       "Authentication."
-    ]
+    ],
+    "explanation": "The statement as written is incorrect; verifying credentials is Authentication, not Authorization (which governs permissions)."
   },
   {
     "id": 485,
@@ -5764,6 +6246,7 @@
     ],
     "correct_answers": [
       "The public cloud is a shared entity whereby multiple corporations each use a portion of the resources in the cloud."
-    ]
+    ],
+    "explanation": "The core benefit of public cloud is shared, multi-tenant infrastructure where many organizations use a portion of the same resource pool cost-effectively."
   }
 ]

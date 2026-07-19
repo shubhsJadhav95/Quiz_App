@@ -254,7 +254,7 @@ function App() {
               return (
                 <div key={index} className={`p-4 rounded-lg ${isCorrect ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}`}>
                   <p className="font-medium text-gray-800 mb-2">Question {originalQuestionStart + index}. {q.question}</p>
-                  <div className="space-y-1">
+                  <div className="space-y-1 mb-3">
                     {q.options.map((option, optIndex) => {
                       const isUserSelected = userAnswers.includes(optIndex)
                       const isCorrectAnswer = q.correct_answers.includes(option)
@@ -276,6 +276,13 @@ function App() {
                       )
                     })}
                   </div>
+                  {q.explanation && (
+                    <div className="mt-3 pt-3 border-t border-gray-300">
+                      <p className="text-gray-600 text-sm">
+                        <strong>Explanation:</strong> {q.explanation}
+                      </p>
+                    </div>
+                  )}
                 </div>
               )
             })}
@@ -369,9 +376,16 @@ function App() {
             <p className="font-semibold text-gray-800 mb-2">
               {currentSelected.some(idx => question.correct_answers.includes(question.options[idx])) ? '✓ Correct!' : '✗ Incorrect'}
             </p>
-            <p className="text-gray-700">
+            <p className="text-gray-700 mb-2">
               <strong>Correct Answer:</strong> {question.correct_answers.join(', ')}
             </p>
+            {question.explanation && (
+              <div className="mt-3 pt-3 border-t border-gray-300">
+                <p className="text-gray-600 text-sm">
+                  <strong>Explanation:</strong> {question.explanation}
+                </p>
+              </div>
+            )}
           </div>
         )}
 

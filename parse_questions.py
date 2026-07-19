@@ -1,14 +1,14 @@
 import re
 import json
 
-def parse_markdown_questions(file_path):
+def parse_markdown_questions_with_explanations(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
     
     questions = []
     
-    # Pattern to match question blocks
-    pattern = r'### (\d+)\.\s+(.*?)\n\n((?:- \[ \].*?\n)+)\n\*\*Answer:\*\*\s+(.*?)(?=\n\n###|\Z)'
+    # Pattern to match question blocks with explanations
+    pattern = r'### (\d+)\.\s+(.*?)\n\n((?:- \[ \].*?\n)+)\n\*\*Answer:\*\*\s+(.*?)\n\*\*Explanation:\*\*\s+(.*?)(?=\n\n###|\Z)'
     
     matches = re.findall(pattern, content, re.DOTALL)
     
@@ -17,6 +17,7 @@ def parse_markdown_questions(file_path):
         question_text = match[1].strip()
         options_block = match[2]
         answer = match[3].strip()
+        explanation = match[4].strip()
         
         # Parse options
         options = []
@@ -33,16 +34,17 @@ def parse_markdown_questions(file_path):
             'id': number,
             'question': question_text,
             'options': options,
-            'correct_answers': correct_answers
+            'correct_answers': correct_answers,
+            'explanation': explanation
         })
     
     return questions
 
-# Parse the file
-questions = parse_markdown_questions('c:/Users/shubh/azure/AZ-900-Questions-Answers-README.md')
+# Parse the explained file
+questions = parse_markdown_questions_with_explanations('c:/Users/shubh/azure/AZ-900-Questions-Answers-Explained.md')
 
 # Save to JSON
 with open('c:/Users/shubh/azure/questions.json', 'w', encoding='utf-8') as f:
     json.dump(questions, f, indent=2, ensure_ascii=False)
 
-print(f"Parsed {len(questions)} questions successfully!")
+print(f"Parsed {len(questions)} questions with explanations successfully!")
