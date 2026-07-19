@@ -1,5 +1,35 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './App.css'
+
+function emojiBlast(originEl, emojis = ['🎉', '✨', '🎊', '⭐'], count = 18) {
+  const rect = originEl.getBoundingClientRect();
+  const originX = rect.left + rect.width / 2;
+  const originY = rect.top + rect.height / 2;
+
+  for (let i = 0; i < count; i++) {
+    const span = document.createElement('span');
+    span.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    span.style.cssText = `
+      position: fixed; left: ${originX}px; top: ${originY}px;
+      font-size: ${14 + Math.random() * 14}px;
+      pointer-events: none; z-index: 9999;
+    `;
+    document.body.appendChild(span);
+
+    const angle = Math.random() * Math.PI * 2;
+    const distance = 60 + Math.random() * 100;
+    const dx = Math.cos(angle) * distance;
+    const dy = Math.sin(angle) * distance - 40; // slight upward bias
+    const rotate = (Math.random() - 0.5) * 720;
+
+    const anim = span.animate([
+      { transform: 'translate(-50%,-50%) translate(0,0) rotate(0deg) scale(.6)', opacity: 1 },
+      { transform: `translate(-50%,-50%) translate(${dx}px,${dy + 80}px) rotate(${rotate}deg) scale(.8)`, opacity: 0 }
+    ], { duration: 700 + Math.random() * 500, easing: 'cubic-bezier(.2,.8,.3,1)', fill: 'forwards' });
+
+    anim.onfinish = () => span.remove();
+  }
+}
 
 function App() {
   const [questions, setQuestions] = useState([])
@@ -15,6 +45,7 @@ function App() {
   const [originalQuestionStart, setOriginalQuestionStart] = useState(1)
   const [checkedAnswers, setCheckedAnswers] = useState([])
   const [showExplanation, setShowExplanation] = useState(false)
+  const checkButtonRef = useRef(null)
 
   useEffect(() => {
     // Load saved progress on mount
@@ -76,15 +107,17 @@ function App() {
     
     // Update score immediately
     const userAnswers = selectedAnswers[currentQuestion] || []
-    const correctIndices = questions[currentQuestion].correct_answers.map(ans => 
-      questions[currentQuestion].options.findIndex(opt => opt === ans)
-    ).filter(i => i !== -1)
-    
-    const isCorrect = userAnswers.length === correctIndices.length &&
-                    userAnswers.every(ans => correctIndices.includes(ans))
+    const isCorrect = userAnswers.length > 0 && 
+                    questions[currentQuestion].correct_answers.includes(
+                      questions[currentQuestion].options[userAnswers[0]]
+                    )
     
     if (isCorrect) {
       setScore(prev => prev + 1)
+      // Trigger emoji blast on correct answer
+      if (checkButtonRef.current) {
+        emojiBlast(checkButtonRef.current)
+      }
     }
   }
 
@@ -249,7 +282,8 @@ function App() {
           <div className="space-y-4 mb-8 max-h-96 overflow-y-auto">
             {questions.map((q, index) => {
               const userAnswers = selectedAnswers[index] || []
-              const isCorrect = userAnswers.length > 0 && q.correct_answers.includes(q.options[userAnswers[0]])
+              const isCorrect = userAnswers.length > 0 && 
+                              q.correct_answers.includes(q.options[userAnswers[0]])
               
               return (
                 <div key={index} className={`p-4 rounded-lg ${isCorrect ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}`}>
@@ -372,9 +406,9 @@ function App() {
         </div>
 
         {showExplanation && (
-          <div className={`mb-6 p-4 rounded-lg ${currentSelected.some(idx => question.correct_answers.includes(question.options[idx])) ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}`}>
+          <div className={`mb-6 p-4 rounded-lg ${currentSelected.length > 0 && question.correct_answers.includes(question.options[currentSelected[0]]) ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}`}>
             <p className="font-semibold text-gray-800 mb-2">
-              {currentSelected.some(idx => question.correct_answers.includes(question.options[idx])) ? '✓ Correct!' : '✗ Incorrect'}
+              {currentSelected.length > 0 && question.correct_answers.includes(question.options[currentSelected[0]]) ? '✓ Correct!' : '✗ Incorrect'}
             </p>
             <p className="text-gray-700 mb-2">
               <strong>Correct Answer:</strong> {question.correct_answers.join(', ')}
@@ -400,6 +434,7 @@ function App() {
           
           {!checkedAnswers[currentQuestion] ? (
             <button
+              ref={checkButtonRef}
               onClick={handleCheckAnswer}
               disabled={currentSelected.length === 0}
               className="px-6 py-3 rounded-lg font-medium transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed bg-blue-600 hover:bg-blue-700 text-white"
