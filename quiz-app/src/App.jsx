@@ -45,6 +45,7 @@ function App() {
   const [originalQuestionStart, setOriginalQuestionStart] = useState(1)
   const [checkedAnswers, setCheckedAnswers] = useState([])
   const [showExplanation, setShowExplanation] = useState(false)
+  const [questionStatus, setQuestionStatus] = useState([])
   const optionRefs = useRef({})
 
   useEffect(() => {
@@ -84,6 +85,7 @@ function App() {
     setCurrentQuestion(0)
     setSelectedAnswers(new Array(selectedQuestions.length).fill([]))
     setCheckedAnswers(new Array(selectedQuestions.length).fill(false))
+    setQuestionStatus(new Array(selectedQuestions.length).fill(null))
     setShowResults(false)
     setScore(0)
     setShowExplanation(false)
@@ -111,6 +113,11 @@ function App() {
                     questions[currentQuestion].correct_answers.includes(
                       questions[currentQuestion].options[userAnswers[0]]
                     )
+    
+    // Update question status
+    const newQuestionStatus = [...questionStatus]
+    newQuestionStatus[currentQuestion] = isCorrect ? 'correct' : 'incorrect'
+    setQuestionStatus(newQuestionStatus)
     
     if (isCorrect) {
       setScore(prev => prev + 1)
@@ -154,6 +161,7 @@ function App() {
     setCurrentQuestion(0)
     setSelectedAnswers([])
     setCheckedAnswers([])
+    setQuestionStatus([])
     setScore(0)
     setShowExplanation(false)
     setStartFromQuestion('1')
@@ -346,9 +354,18 @@ function App() {
             <span className="text-sm font-medium text-blue-600">
               Question {originalQuestionStart + currentQuestion}/{questions.length + originalQuestionStart - 1}
             </span>
-            <span className="text-sm font-bold text-blue-600">
-              {Math.round(((currentQuestion + 1) / questions.length) * 100)}%
-            </span>
+            <div className="flex items-center gap-2">
+              <span className="text-sm font-bold text-blue-600">
+                {Math.round(((currentQuestion + 1) / questions.length) * 100)}%
+              </span>
+              <div className="flex gap-1">
+                {questionStatus.slice(0, currentQuestion).map((status, index) => (
+                  <span key={index} className="text-lg">
+                    {status === 'correct' ? '✅' : status === 'incorrect' ? '❌' : ''}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
           <div className="w-full bg-gray-200 rounded-full h-3">
             <div 
@@ -369,21 +386,28 @@ function App() {
             
             let optionClass = 'border-gray-200 hover:border-blue-300 hover:bg-gray-50 text-gray-700'
             let radioClass = 'border-gray-300'
+            let radioContent = null
             
             if (isChecked) {
               if (isSelected && isCorrect) {
                 optionClass = 'border-green-500 bg-green-50 text-green-700'
                 radioClass = 'border-green-500 bg-green-500'
+                radioContent = <span className="text-white text-sm">✓</span>
               } else if (isSelected && !isCorrect) {
                 optionClass = 'border-red-500 bg-red-50 text-red-700'
                 radioClass = 'border-red-500 bg-red-500'
+                radioContent = <span className="text-white text-sm">✗</span>
               } else if (isCorrect) {
                 optionClass = 'border-green-300 bg-green-50 text-green-600'
-                radioClass = 'border-green-500'
+                radioClass = 'border-green-500 bg-green-500'
+                radioContent = <span className="text-white text-sm">✓</span>
               }
             } else if (isSelected) {
               optionClass = 'border-blue-500 bg-blue-50 text-blue-700'
               radioClass = 'border-blue-500 bg-blue-500'
+              radioContent = <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
             }
             
             return (
@@ -396,11 +420,7 @@ function App() {
               >
                 <div className="flex items-center">
                   <div className={`w-6 h-6 rounded-full border-2 mr-3 flex items-center justify-center ${radioClass}`}>
-                    {isSelected && (
-                      <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    )}
+                    {radioContent}
                   </div>
                   <span>{option}</span>
                 </div>
