@@ -358,11 +358,18 @@ function App() {
               <span className="text-sm font-bold text-blue-600">
                 {Math.round(((currentQuestion + 1) / questions.length) * 100)}%
               </span>
-              <div className="flex gap-1">
+              <div className="flex gap-1 flex-wrap justify-end">
                 {questionStatus.slice(0, currentQuestion).map((status, index) => (
-                  <span key={index} className="text-lg">
-                    {status === 'correct' ? '✅' : status === 'incorrect' ? '❌' : ''}
-                  </span>
+                  <div 
+                    key={index} 
+                    className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold ${
+                      status === 'correct' ? 'bg-green-500 text-white' : 
+                      status === 'incorrect' ? 'bg-red-500 text-white' : 
+                      'bg-gray-300 text-gray-600'
+                    }`}
+                  >
+                    {status === 'correct' ? '✓' : '✗'}
+                  </div>
                 ))}
               </div>
             </div>
