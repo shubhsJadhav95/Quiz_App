@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import './App.css'
 
 function emojiBlast(originEl, emojis = ['🎉', '✨', '🎊', '⭐'], count = 18) {
@@ -46,17 +46,46 @@ function App() {
   const [checkedAnswers, setCheckedAnswers] = useState([])
   const [showExplanation, setShowExplanation] = useState(false)
   const [questionStatus, setQuestionStatus] = useState([])
+  const [selectedExam, setSelectedExam] = useState('az900')
+  const [streak, setStreak] = useState(0)
+  const [xp, setXp] = useState(0)
+  const [bookmarkedQuestions, setBookmarkedQuestions] = useState([])
+  const [showReviewMode, setShowReviewMode] = useState(false)
+  const [usedHint, setUsedHint] = useState(false)
   const optionRefs = useRef({})
 
+  const handleAnswerSelect = (optionIndex) => {
+    const newSelectedAnswers = [...selectedAnswers]
+    newSelectedAnswers[currentQuestion] = [optionIndex]
+    setSelectedAnswers(newSelectedAnswers)
+    setShowExplanation(false)
+    setUsedHint(false)
+  }
+
+  const toggleBookmark = useCallback((questionIndex) => {
+    setBookmarkedQuestions(prev => {
+      if (prev.includes(questionIndex)) {
+        return prev.filter(i => i !== questionIndex)
+      } else {
+        return [...prev, questionIndex]
+      }
+    })
+  }, [])
+
   useEffect(() => {
+    setLoading(true)
     // Load saved progress on mount
-    const savedProgress = localStorage.getItem('az900_quiz_progress')
+    const progressKey = `${selectedExam}_quiz_progress`
+    const savedProgress = localStorage.getItem(progressKey)
     if (savedProgress) {
       const progress = JSON.parse(savedProgress)
       setStartFromQuestion(progress.toString())
+    } else {
+      setStartFromQuestion('1')
     }
 
-    fetch('/questions.json')
+    const questionFile = selectedExam === 'az900' ? '/questions.json' : '/az104_questions.json'
+    fetch(questionFile)
       .then(response => response.json())
       .then(data => {
         setQuestions(data)
@@ -66,7 +95,7 @@ function App() {
         console.error('Error loading questions:', error)
         setLoading(false)
       })
-  }, [])
+  }, [selectedExam])
 
   const startQuiz = () => {
     let numQuestions
@@ -86,6 +115,11 @@ function App() {
     setSelectedAnswers(new Array(selectedQuestions.length).fill([]))
     setCheckedAnswers(new Array(selectedQuestions.length).fill(false))
     setQuestionStatus(new Array(selectedQuestions.length).fill(null))
+    setStreak(0)
+    setXp(0)
+    setBookmarkedQuestions([])
+    setShowReviewMode(false)
+    setUsedHint(false)
     setShowResults(false)
     setScore(0)
     setShowExplanation(false)
@@ -93,15 +127,7 @@ function App() {
     setQuizStarted(true)
   }
 
-  const handleAnswerSelect = (optionIndex) => {
-    // Single selection mode (radio button style)
-    const newSelectedAnswers = [...selectedAnswers]
-    newSelectedAnswers[currentQuestion] = [optionIndex]
-    setSelectedAnswers(newSelectedAnswers)
-    setShowExplanation(false)
-  }
-
-  const handleCheckAnswer = () => {
+  const handleCheckAnswer = useCallback(() => {
     const newCheckedAnswers = [...checkedAnswers]
     newCheckedAnswers[currentQuestion] = true
     setCheckedAnswers(newCheckedAnswers)
@@ -121,41 +147,52 @@ function App() {
     
     if (isCorrect) {
       setScore(prev => prev + 1)
+      // Update streak
+      setStreak(prev => prev + 1)
+      // Award XP (10 for first try, 5 if hint was used)
+      const xpEarned = usedHint ? 5 : 10
+      setXp(prev => prev + xpEarned)
       // Trigger emoji blast from the selected correct answer option
       const selectedOptionIndex = userAnswers[0]
       const optionKey = `${currentQuestion}-${selectedOptionIndex}`
       if (optionRefs.current[optionKey]) {
         emojiBlast(optionRefs.current[optionKey])
       }
+    } else {
+      // Reset streak on wrong answer
+      setStreak(0)
     }
-  }
+  }, [checkedAnswers, currentQuestion, selectedAnswers, questions, questionStatus, usedHint])
 
-  const handleNext = () => {
+  const calculateScore = useCallback(() => {
+    // Score is already updated during checkAnswer
+    setShowResults(true)
+  }, [])
+
+  const handleNext = useCallback(() => {
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1)
       setShowExplanation(false)
+      setUsedHint(false)
       // Save progress
+      const progressKey = `${selectedExam}_quiz_progress`
       const nextQuestionNumber = originalQuestionStart + currentQuestion + 1
-      localStorage.setItem('az900_quiz_progress', nextQuestionNumber.toString())
+      localStorage.setItem(progressKey, nextQuestionNumber.toString())
     } else {
       calculateScore()
       // Clear progress after completing quiz
-      localStorage.removeItem('az900_quiz_progress')
+      const progressKey = `${selectedExam}_quiz_progress`
+      localStorage.removeItem(progressKey)
     }
-  }
+  }, [currentQuestion, questions.length, originalQuestionStart, selectedExam, calculateScore])
 
-  const handlePrevious = () => {
+  const handlePrevious = useCallback(() => {
     if (currentQuestion > 0) {
       setCurrentQuestion(currentQuestion - 1)
     }
-  }
+  }, [currentQuestion])
 
-  const calculateScore = () => {
-    // Score is already updated during checkAnswer
-    setShowResults(true)
-  }
-
-  const resetQuiz = (clearProgress = true) => {
+  const resetQuiz = useCallback((clearProgress = true) => {
     setQuizStarted(false)
     setShowResults(false)
     setCurrentQuestion(0)
@@ -166,17 +203,63 @@ function App() {
     setShowExplanation(false)
     if (clearProgress) {
       setStartFromQuestion('1')
-      localStorage.removeItem('az900_quiz_progress')
+      const progressKey = `${selectedExam}_quiz_progress`
+      localStorage.removeItem(progressKey)
     }
     setOriginalQuestionStart(1)
-  }
+  }, [selectedExam])
+
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (!quizStarted || showResults) return
+
+      // 1-4 keys for option selection
+      if (e.key >= '1' && e.key <= '4') {
+        const optionIndex = parseInt(e.key) - 1
+        if (optionIndex < questions[currentQuestion]?.options.length && !checkedAnswers[currentQuestion]) {
+          const newSelectedAnswers = [...selectedAnswers]
+          newSelectedAnswers[currentQuestion] = [optionIndex]
+          setSelectedAnswers(newSelectedAnswers)
+          setShowExplanation(false)
+          setUsedHint(false)
+        }
+      }
+
+      // Enter to check answer or advance
+      if (e.key === 'Enter') {
+        if (showExplanation) {
+          handleNext()
+        } else if (!checkedAnswers[currentQuestion] && selectedAnswers[currentQuestion]?.length > 0) {
+          handleCheckAnswer()
+        }
+      }
+
+      // Arrow right to advance
+      if (e.key === 'ArrowRight' && showExplanation) {
+        handleNext()
+      }
+
+      // Arrow left to go back
+      if (e.key === 'ArrowLeft' && currentQuestion > 0) {
+        handlePrevious()
+      }
+
+      // B to bookmark
+      if (e.key === 'b' || e.key === 'B') {
+        toggleBookmark(currentQuestion)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyPress)
+    return () => window.removeEventListener('keydown', handleKeyPress)
+  }, [quizStarted, showResults, currentQuestion, checkedAnswers, showExplanation, selectedAnswers, questions, toggleBookmark, handleNext, handlePrevious, handleCheckAnswer])
 
   if (loading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading questions...</p>
+          <p className="mt-4 text-gray-600">Loading {selectedExam.toUpperCase()} questions...</p>
         </div>
       </div>
     )
@@ -192,10 +275,42 @@ function App() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
               </svg>
             </div>
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">AZ-900 Practice Quiz</h1>
+            <h1 className="text-3xl font-bold text-gray-800 mb-2">Azure Practice Quiz</h1>
             <p className="text-gray-600">Test your Azure knowledge with {questions.length} practice questions</p>
           </div>
-          
+
+          <div className="mb-6">
+            <label className="block text-gray-700 font-medium mb-2">Select Exam:</label>
+            <div className="flex gap-4">
+              <button
+                onClick={() => setSelectedExam('az900')}
+                className={`flex-1 p-4 rounded-lg border-2 transition-all duration-200 ${
+                  selectedExam === 'az900'
+                    ? 'border-blue-500 bg-blue-50 text-blue-700'
+                    : 'border-gray-200 hover:border-blue-300 hover:bg-gray-50 text-gray-700'
+                }`}
+              >
+                <div className="text-center">
+                  <div className="font-bold text-lg">AZ-900</div>
+                  <div className="text-sm text-gray-500">Azure Fundamentals</div>
+                </div>
+              </button>
+              <button
+                onClick={() => setSelectedExam('az104')}
+                className={`flex-1 p-4 rounded-lg border-2 transition-all duration-200 ${
+                  selectedExam === 'az104'
+                    ? 'border-blue-500 bg-blue-50 text-blue-700'
+                    : 'border-gray-200 hover:border-blue-300 hover:bg-gray-50 text-gray-700'
+                }`}
+              >
+                <div className="text-center">
+                  <div className="font-bold text-lg">AZ-104</div>
+                  <div className="text-sm text-gray-500">Azure Administrator</div>
+                </div>
+              </button>
+            </div>
+          </div>
+
           <div className="mb-6">
             <label className="block text-gray-700 font-medium mb-2">Number of Questions:</label>
             <select 
@@ -212,7 +327,7 @@ function App() {
               <option value="50">50 Questions</option>
               <option value="100">100 Questions</option>
               <option value="200">200 Questions</option>
-              <option value="483">All Questions (483)</option>
+              <option value={questions.length}>All Questions ({questions.length})</option>
               <option value="custom">Custom Number</option>
             </select>
             
@@ -284,7 +399,7 @@ function App() {
             <div className={`${bgColor} rounded-full w-32 h-32 flex items-center justify-center mx-auto mb-4`}>
               <span className="text-4xl font-bold text-gray-800">{percentage}%</span>
             </div>
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">Quiz Complete!</h1>
+            <h1 className="text-3xl font-bold text-gray-800 mb-2">{selectedExam.toUpperCase()} Quiz Complete!</h1>
             <p className="text-gray-600 text-lg">{message}</p>
             <p className="text-gray-500 mt-2">You scored {score} out of {questions.length} questions</p>
           </div>
@@ -333,6 +448,13 @@ function App() {
           </div>
 
           <button
+            onClick={() => setShowReviewMode(true)}
+            className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 shadow-lg hover:shadow-xl mb-3"
+          >
+            Review Answers
+          </button>
+
+          <button
             onClick={() => resetQuiz(false)}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 shadow-lg hover:shadow-xl mb-3"
           >
@@ -350,6 +472,98 @@ function App() {
     )
   }
 
+  if (showReviewMode) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
+        <div className="bg-white rounded-2xl shadow-xl p-8 max-w-4xl w-full">
+          <div className="flex justify-between items-center mb-6">
+            <h1 className="text-2xl font-bold text-gray-800">Review Answers</h1>
+            <button
+              onClick={() => setShowReviewMode(false)}
+              className="text-gray-500 hover:text-gray-700"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <div className="mb-4">
+            <button
+              onClick={() => setBookmarkedQuestions([])}
+              className="text-sm text-purple-600 hover:text-purple-700 underline"
+            >
+              Show All Questions
+            </button>
+            {bookmarkedQuestions.length > 0 && (
+              <>
+                <span className="mx-2">|</span>
+                <button
+                  onClick={() => {
+                    // Filter to show only bookmarked
+                  }}
+                  className="text-sm text-purple-600 hover:text-purple-700 underline"
+                >
+                  Show Bookmarked ({bookmarkedQuestions.length})
+                </button>
+              </>
+            )}
+          </div>
+
+          <div className="space-y-6 max-h-[70vh] overflow-y-auto">
+            {questions.map((q, index) => (
+              <div key={index} className="border rounded-lg p-4">
+                <div className="flex items-start gap-2 mb-3">
+                  <span className="text-sm font-bold text-blue-600">Q{index + 1}</span>
+                  <button
+                    onClick={() => toggleBookmark(index)}
+                    className={`text-yellow-500`}
+                  >
+                    <svg className="w-5 h-5" fill={bookmarkedQuestions.includes(index) ? "currentColor" : "none"} stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                    </svg>
+                  </button>
+                  <p className="text-sm text-gray-800 flex-1">{q.question}</p>
+                </div>
+                
+                <div className="space-y-2 ml-6">
+                  {q.options.map((option, optIndex) => {
+                    const userAnswers = selectedAnswers[index] || []
+                    const isSelected = userAnswers.includes(optIndex)
+                    const isCorrect = q.correct_answers.includes(option)
+                    
+                    return (
+                      <div key={optIndex} className={`text-sm p-2 rounded ${
+                        isSelected && isCorrect ? 'bg-green-100 text-green-800' :
+                        isSelected && !isCorrect ? 'bg-red-100 text-red-800' :
+                        !isSelected && isCorrect ? 'bg-green-50 text-green-600' :
+                        'text-gray-600'
+                      }`}>
+                        {option}
+                        {isSelected && isCorrect && <span className="ml-2">✓ Your answer</span>}
+                        {isSelected && !isCorrect && <span className="ml-2">✗ Your answer</span>}
+                        {!isSelected && isCorrect && <span className="ml-2">✓ Correct answer</span>}
+                      </div>
+                    )
+                  })}
+                </div>
+
+                {q.explanation && (
+                  <div className="mt-3 ml-6 text-sm text-gray-600 bg-gray-50 p-2 rounded">
+                    <strong>Explanation:</strong> {q.explanation}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+          <div className="text-center text-xs text-gray-400 mt-4">
+            Keyboard shortcuts: 1-4 select options | Enter check/next | ← → navigate | B bookmark
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   const question = questions[currentQuestion]
   const currentSelected = selectedAnswers[currentQuestion] || []
 
@@ -358,16 +572,27 @@ function App() {
       <div className="bg-white rounded-2xl shadow-xl p-8 max-w-3xl w-full">
         <div className="mb-6">
           <div className="flex justify-between items-center mb-4">
-            <span className="text-sm font-medium text-blue-600">
-              Question {originalQuestionStart + currentQuestion}/{questions.length + originalQuestionStart - 1}
-            </span>
-            <div className="flex items-center gap-2">
+            <div>
+              <span className="text-sm font-bold text-blue-600">{selectedExam.toUpperCase()}</span>
+              <span className="text-sm font-medium text-blue-600 ml-2">
+                Question {originalQuestionStart + currentQuestion}/{questions.length + originalQuestionStart - 1}
+              </span>
+            </div>
+            <div className="flex items-center gap-3">
               <button
                 onClick={() => resetQuiz(false)}
                 className="text-sm text-gray-500 hover:text-gray-700 underline"
               >
                 Exit Quiz
               </button>
+              {streak >= 3 && (
+                <span className="text-sm font-bold text-orange-500 flex items-center gap-1">
+                  🔥 {streak}
+                </span>
+              )}
+              <span className="text-sm font-bold text-purple-600">
+                ⭐ {xp} XP
+              </span>
               <span className="text-sm font-bold text-blue-600">
                 {Math.round(((currentQuestion + 1) / questions.length) * 100)}%
               </span>
@@ -395,7 +620,17 @@ function App() {
           </div>
         </div>
 
-        <h2 className="text-xl font-semibold text-gray-800 mb-6">{question.question}</h2>
+        <div className="flex items-start gap-3 mb-6">
+          <button
+            onClick={() => toggleBookmark(currentQuestion)}
+            className={`mt-1 ${bookmarkedQuestions.includes(currentQuestion) ? 'text-yellow-500' : 'text-gray-300 hover:text-yellow-500'} transition-colors`}
+          >
+            <svg className="w-6 h-6" fill={bookmarkedQuestions.includes(currentQuestion) ? "currentColor" : "none"} stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+            </svg>
+          </button>
+          <h2 className="text-xl font-semibold text-gray-800 flex-1">{question.question}</h2>
+        </div>
 
         <div className="space-y-3 mb-6">
           {question.options.map((option, index) => {
@@ -489,9 +724,13 @@ function App() {
               onClick={handleNext}
               className="px-6 py-3 rounded-lg font-medium transition duration-200 bg-blue-600 hover:bg-blue-700 text-white"
             >
-              {currentQuestion === questions.length - 1 ? 'Finish' : 'Next'}
+              Next
             </button>
           )}
+        </div>
+
+        <div className="text-center text-xs text-gray-400 mt-4">
+          Keyboard shortcuts: 1-4 select options | Enter check/next | ← → navigate | B bookmark
         </div>
       </div>
     </div>
